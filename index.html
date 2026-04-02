@@ -41,30 +41,21 @@
         </clipPath>
       </defs>
       <g clip-path="url(#hero-clip)">
-        <!-- Blob esquerdo -->
         <rect x="-150" y="71.88" width="600" height="600" rx="300" fill="#76B900" fill-opacity="0.10" filter="url(#blur-blob-left)"/>
-        <!-- Blob direito -->
         <rect x="680" y="-200" width="800" height="800" rx="400" fill="url(#grad-blob-right)" filter="url(#blur-blob-right)"/>
-        <!-- Linha curva 1 — stroke-width 2.09 -->
         <path d="M0 161.55C256 107.7 469.333 188.475 640 403.875C810.667 619.275 1024 700.05 1280 646.2" stroke="#76B900" stroke-width="2.09" fill="none"/>
-        <!-- Linha curva 2 — stroke-width 1.04 -->
         <path d="M0 403.875C341.333 350.025 597.333 376.95 768 484.65C938.667 592.35 1109.33 511.575 1280 242.325" stroke="#76B900" stroke-width="1.04" fill="none"/>
-        <!-- Linha curva 3 — stroke-width 1.57 opacity 0.5 -->
         <path d="M1280 80.775C1024 242.325 725.333 376.95 384 484.65C42.6667 592.35 -85.3333 673.125 0 726.975" stroke="#76B900" stroke-width="1.57" fill="none" opacity="0.5"/>
-        <!-- Círculos decorativos canto superior direito -->
         <rect x="1088.5" y="121.66" width="127" height="127" rx="63.5" stroke="#76B900" stroke-opacity="0.2" fill="none"/>
         <rect x="1152" y="96.77" width="125" height="125" rx="62.5" transform="rotate(45 1152 96.77)" stroke="#76B900" stroke-opacity="0.1" fill="none"/>
         <rect x="1063.61" y="185.16" width="125" height="125" rx="62.5" transform="rotate(-45 1063.61 185.16)" stroke="#76B900" stroke-opacity="0.1" fill="none"/>
-        <!-- Círculo branco pequeno -->
         <rect opacity="0.3" x="576.5" y="599.48" width="63" height="63" rx="31.5" stroke="white" stroke-opacity="0.1" fill="none"/>
       </g>
     </svg>
 
-    <!-- Barra verde esquerda (rect x=56 y=183 w=4 h=96 no Figma) -->
     <div class="hero-accent-bar" aria-hidden="true"></div>
 
     <div class="container hero-container">
-      <!-- CONTEÚDO TEXTO -->
       <div class="hero-content">
         <h1 class="hero-title">
           Lorem ipsum dolor,<br />sit <span class="hero-accent">amet</span>
@@ -78,11 +69,8 @@
         </a>
       </div>
 
-      <!-- MOCKUP — HTML/CSS baseado nas coords do Figma -->
       <div class="hero-visual" aria-hidden="true">
         <div class="mockup-window">
-
-          <!-- Topbar: dots + address bar -->
           <div class="mockup-topbar">
             <div class="mockup-dots">
               <span class="mdot red"></span>
@@ -91,11 +79,7 @@
             </div>
             <div class="mockup-addressbar"></div>
           </div>
-
-          <!-- Body: sidebar + main -->
           <div class="mockup-body">
-
-            <!-- Sidebar -->
             <div class="mockup-sidebar">
               <div class="msb-line"></div>
               <div class="msb-line short"></div>
@@ -105,17 +89,11 @@
               <div class="msb-spacer"></div>
               <div class="msb-btn"></div>
             </div>
-
-            <!-- Main -->
             <div class="mockup-main">
-
-              <!-- Cabeçalho do conteúdo -->
               <div class="mockup-content-header">
                 <div class="mch-line wide"></div>
                 <div class="mch-line medium"></div>
               </div>
-
-              <!-- Gráfico -->
               <div class="mockup-chart-wrap">
                 <div class="mockup-chart-header">
                   <div class="mch-tag"></div>
@@ -128,27 +106,12 @@
                       <stop offset="100%" stop-color="#76B900" stop-opacity="0"/>
                     </linearGradient>
                   </defs>
-                  <!-- Área preenchida -->
-                  <polygon
-                    points="0,95 40,80 80,85 120,60 160,65 200,38 245,42 290,18 345,10 345,100 0,100"
-                    fill="url(#chartGrad)"
-                  />
-                  <!-- Linha do gráfico -->
-                  <polyline
-                    points="0,95 40,80 80,85 120,60 160,65 200,38 245,42 290,18 345,10"
-                    fill="none"
-                    stroke="#76B900"
-                    stroke-width="2.5"
-                    stroke-linejoin="round"
-                    stroke-linecap="round"
-                  />
-                  <!-- Pontos -->
+                  <polygon points="0,95 40,80 80,85 120,60 160,65 200,38 245,42 290,18 345,10 345,100 0,100" fill="url(#chartGrad)"/>
+                  <polyline points="0,95 40,80 80,85 120,60 160,65 200,38 245,42 290,18 345,10" fill="none" stroke="#76B900" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
                   <circle cx="200" cy="38" r="4" fill="#76B900"/>
                   <circle cx="290" cy="18" r="4" fill="#76B900"/>
                 </svg>
               </div>
-
-              <!-- Dois cards inferiores -->
               <div class="mockup-cards-row">
                 <div class="mockup-card">
                   <div class="mc-line wide"></div>
@@ -161,12 +124,11 @@
                   <div class="mc-accent"></div>
                 </div>
               </div>
-
-            </div><!-- /mockup-main -->
-          </div><!-- /mockup-body -->
-        </div><!-- /mockup-window -->
-      </div><!-- /hero-visual -->
-    </div><!-- /hero-container -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </section>
 
   <main>
@@ -338,10 +300,55 @@
         <h2 class="section-title" id="titulo-faq">Perguntas frequentes</h2>
         <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         <div class="faq-lista">
-          <details class="faq-item"><summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary><div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div></details>
-          <details class="faq-item"><summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary><div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div></details>
-          <details class="faq-item"><summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary><div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div></details>
-          <details class="faq-item"><summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary><div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div></details>
+
+          <details class="faq-item">
+            <summary class="faq-pergunta">
+              <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L6 7L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-pergunta">
+              <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L6 7L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-pergunta">
+              <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L6 7L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-pergunta">
+              <span>Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>
+              <span class="faq-icon" aria-hidden="true">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path d="M1 1L6 7L11 1" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </span>
+            </summary>
+            <div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div>
+          </details>
+
         </div>
       </div>
     </section>
@@ -354,21 +361,13 @@
       <a href="https://www.dotgroup.com.br" target="_blank" rel="noopener noreferrer" class="footer-logo-link" aria-label="DOT Digital Group">
         <svg width="145" height="42" viewBox="0 0 145 42" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
           <g clip-path="url(#clip0_18_515)">
-            <mask id="mask0_18_515" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="145" height="42">
-              <path d="M145 0H0V42H145V0Z" fill="white"/>
-            </mask>
+            <mask id="mask0_18_515" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="145" height="42"><path d="M145 0H0V42H145V0Z" fill="white"/></mask>
             <g mask="url(#mask0_18_515)">
-              <mask id="mask1_18_515" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="145" height="42">
-                <path d="M145 0H0V42H145V0Z" fill="white"/>
-              </mask>
+              <mask id="mask1_18_515" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="145" height="42"><path d="M145 0H0V42H145V0Z" fill="white"/></mask>
               <g mask="url(#mask1_18_515)">
-                <mask id="mask2_18_515" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="145" height="42">
-                  <path d="M144.752 0H0V42H144.752V0Z" fill="white"/>
-                </mask>
+                <mask id="mask2_18_515" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="145" height="42"><path d="M144.752 0H0V42H144.752V0Z" fill="white"/></mask>
                 <g mask="url(#mask2_18_515)">
-                  <mask id="mask3_18_515" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="145" height="42">
-                    <path d="M144.752 0H0V42H144.752V0Z" fill="white"/>
-                  </mask>
+                  <mask id="mask3_18_515" style="mask-type:luminance" maskUnits="userSpaceOnUse" x="0" y="0" width="145" height="42"><path d="M144.752 0H0V42H144.752V0Z" fill="white"/></mask>
                   <g mask="url(#mask3_18_515)">
                     <path d="M106.956 16.5967C107.689 17.2563 108.055 18.3512 108.053 19.8813C108.053 22.7308 106.632 24.1555 103.788 24.1557H101.053C101.038 24.1578 101.022 24.1564 101.008 24.1516C100.993 24.1468 100.98 24.1388 100.969 24.1281C100.958 24.1174 100.949 24.1044 100.944 24.0901C100.94 24.0758 100.938 24.0606 100.94 24.0456L101.04 15.7175C101.038 15.7026 101.039 15.6873 101.044 15.673C101.049 15.6587 101.058 15.6457 101.068 15.635C101.079 15.6243 101.093 15.6163 101.107 15.6115C101.122 15.6067 101.138 15.6053 101.153 15.6074H103.788C105.167 15.6074 106.223 15.9373 106.955 16.5969M106.478 22.7266C107.092 22.1652 107.4 21.2168 107.4 19.8816C107.4 18.0415 106.823 16.9058 105.669 16.4745C105.063 16.2751 104.427 16.1801 103.787 16.1938H101.692L101.592 23.5693H103.787C104.966 23.5693 105.863 23.2884 106.478 22.7266Z" fill="white"/>
                     <path d="M109.905 24.0639C109.875 24.0364 109.851 24.0033 109.835 23.9665C109.819 23.9297 109.81 23.8901 109.811 23.85V15.8763C109.809 15.8344 109.817 15.7927 109.833 15.7538C109.85 15.7149 109.874 15.6797 109.905 15.6504C109.933 15.6213 109.967 15.5982 110.005 15.5825C110.042 15.5668 110.083 15.5587 110.124 15.5589H110.149C110.19 15.557 110.232 15.5636 110.271 15.5783C110.31 15.593 110.345 15.6154 110.375 15.6441C110.404 15.6729 110.427 15.7073 110.443 15.7452C110.458 15.783 110.465 15.8236 110.463 15.8642V23.8504C110.463 23.9301 110.432 24.0068 110.375 24.0643C110.346 24.0943 110.311 24.118 110.272 24.1338C110.233 24.1495 110.191 24.157 110.149 24.1558H110.124C110.083 24.1558 110.042 24.1477 110.005 24.132C109.967 24.1163 109.933 24.0928 109.905 24.0639Z" fill="white"/>
