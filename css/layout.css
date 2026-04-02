@@ -382,10 +382,15 @@ body {
 /* Item único: imagem à esquerda + texto à direita */
 .two-img-item {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   align-items: center;
   gap: 32px;
   width: 100%;
+}
+@media (min-width: 1024px) {
+   .two-img-item {
+      flex-direction: row;
+   }
 }
 
 /* Imagem: largura fixa conforme Figma */
