@@ -149,9 +149,9 @@
 }
 
 .atividade-titulo {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: var(--text);
+  font: 700 20px/28px "Inter" sans-serif;
+  color: #0f172a;
+
   margin-bottom: 0.5rem;
 }
 
@@ -311,16 +311,6 @@ button:disabled {
   flex-direction: column;
   gap: 8px;
   flex: 1;
-}
-
-#atividade-objetiva .atividade-titulo {
-  font-family: "Inter", sans-serif;
-  font-style: normal;
-  font-weight: 700;
-  font-size: 20px;
-  line-height: 28px;
-  color: #0f172a;
-  margin-bottom: 0;
 }
 
 #atividade-objetiva .atividade-desc {
