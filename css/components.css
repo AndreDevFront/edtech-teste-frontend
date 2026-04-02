@@ -7,104 +7,147 @@
 
 .cards-swiper {
   padding-bottom: 2.5rem !important;
+  /* espaço vertical para o card central "flutuar" */
+  padding-top: 8px;
+  overflow: visible !important;
 }
 
 .cards-swiper .swiper-slide {
   height: auto;
+  /* alinha verticalmente os slides para o central sobressair */
+  display: flex;
+  align-items: stretch;
 }
 
+/* ---- Card base (fechado / lateral) ---- */
 .card {
-  background: #ffffff;
-  border-radius: var(--radius-md);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.07);
-  overflow: hidden;
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  height: 100%;
-  transition: box-shadow 0.25s;
+  justify-content: space-between;
+  align-items: center;
+  padding: 32px;
+  width: 100%;
+  min-height: 320px;
+  background: #F9FAFB;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  transition:
+    background 0.3s,
+    box-shadow 0.3s,
+    transform 0.3s,
+    min-height 0.3s;
 }
 
-.card:hover {
-  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+/* ---- Card aberto (ativo — fundo escuro, elevado) ---- */
+.card.aberto {
+  background: #0C0A08;
+  min-height: 336px;
+  transform: translateY(-8px);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
 }
 
-.card-header {
-  padding: 2rem 1.5rem 1rem;
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
-  flex: 1;
-}
-
+/* ---- Ícone "?" (card fechado) ---- */
 .card-icon {
-  width: 44px;
-  height: 44px;
-  background: var(--bg-dark);
-  color: var(--white);
-  border-radius: 50%;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 40px;
+  color: #1E293B;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  font-weight: 700;
 }
 
-.card-header p {
-  color: var(--text-light);
-  font-size: 0.9rem;
-  line-height: 1.65;
+/* Esconde o ícone quando aberto */
+.card.aberto .card-icon {
+  display: none;
 }
 
-.card-footer {
-  padding: 1rem 1.5rem 1.5rem;
-  border-top: 1px solid #f0f0f0;
-}
-
-.card-btn-abrir {
-  display: inline-flex;
+/* ---- Header ---- */
+.card-header {
+  display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 0.4rem;
-  background: transparent;
-  border: 2px solid var(--text);
-  color: var(--text);
-  padding: 0.5rem 1.25rem;
-  border-radius: var(--radius-sm);
-  font-size: 0.875rem;
-  font-weight: 600;
+  justify-content: center;
+  flex: 1;
+  width: 100%;
+}
+
+/* Parágrafo do card fechado: oculto */
+.card-header p {
+  display: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  text-align: center;
+  color: #D1D5DB;
+  margin: 0;
+}
+
+/* Parágrafo visível apenas quando aberto */
+.card.aberto .card-header p {
+  display: block;
+}
+
+/* ---- Footer ---- */
+.card-footer {
+  padding-top: 16px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  border-top: none;
+}
+
+/* ---- Botão Abrir (card fechado) ---- */
+.card-btn-abrir {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 32px;
+  width: auto;
+  height: 42px;
+  background: #FFFFFF;
+  border: 1px solid #E5E7EB;
+  border-radius: 4px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: #334155;
+  cursor: pointer;
   transition:
     background 0.2s,
-    color 0.2s,
-    border-color 0.2s;
+    border-color 0.2s,
+    color 0.2s;
 }
 
 .card-btn-abrir:hover {
-  background: var(--text);
-  color: #fff;
+  border-color: #0C0A08;
 }
 
+/* ---- Botão Fechar (card aberto) ---- */
 .card.aberto .card-btn-abrir {
-  background: var(--accent);
-  border-color: var(--accent);
-  color: var(--bg-dark);
+  background: transparent;
+  border: 1px solid #4B5563;
+  color: #FFFFFF;
+  width: 129px;
+  height: 44px;
 }
 
+.card.aberto .card-btn-abrir:hover {
+  background: rgba(255,255,255,0.08);
+  border-color: #9CA3AF;
+}
+
+/* ---- card-body (conteúdo expandido) ---- */
 .card-body {
-  max-height: 0;
-  overflow: hidden;
-  transition:
-    max-height 0.4s ease,
-    padding 0.3s ease;
-  padding: 0 1.5rem;
-  color: var(--text-light);
-  line-height: 1.7;
-  font-size: 0.9rem;
+  display: none;
 }
 
-.card.aberto .card-body {
-  max-height: 300px;
-  padding: 1rem 1.5rem 1.5rem;
-}
-
+/* ---- Paginação ---- */
 .cards-swiper .swiper-pagination-bullet {
   background: #ccc;
   opacity: 1;
@@ -166,7 +209,6 @@
 .atividade-titulo {
   font: 700 20px/28px "Inter" sans-serif;
   color: #0f172a;
-
   margin-bottom: 0.5rem;
 }
 
@@ -252,7 +294,7 @@ button:disabled {
 
 .feedback.visivel {
   display: block;
-   width: 100%;
+  width: 100%;
 }
 
 .feedback strong {
@@ -269,7 +311,11 @@ button:disabled {
   background: #e8f5e9;
   color: #1b5e20;
 }
-.feedback-fechar { float: right; }
+
+.feedback-fechar {
+  float: right;
+}
+
 .feedback-erro {
   background: #fff8e1;
   color: #6d4c00;
@@ -294,7 +340,6 @@ button:disabled {
   margin-bottom: 0;
 }
 
-/* Cabeçalho: ícone + textos */
 .atividade-header {
   display: flex;
   flex-direction: row;
@@ -338,7 +383,6 @@ button:disabled {
   margin-bottom: 0;
 }
 
-/* Lista de opções */
 #atividade-objetiva .opcoes-lista {
   display: flex;
   flex-direction: column;
@@ -347,7 +391,6 @@ button:disabled {
   margin-bottom: 0;
 }
 
-/* Opção padrão (não selecionada) */
 #atividade-objetiva .opcao-item {
   box-sizing: border-box;
   display: flex;
@@ -376,7 +419,6 @@ button:disabled {
   background: rgba(118, 185, 0, 0.04);
 }
 
-/* Checkbox wrapper */
 #atividade-objetiva .opcao-item input[type="checkbox"] {
   box-sizing: border-box;
   width: 20px;
@@ -391,7 +433,6 @@ button:disabled {
   cursor: pointer;
 }
 
-/* Opção selecionada */
 #atividade-objetiva .opcao-item.selecionada {
   background: #0c0a08;
   border-color: #0c0a08;
@@ -403,7 +444,6 @@ button:disabled {
   color: #ffffff;
 }
 
-/* Letra da opção */
 #atividade-objetiva .opcao-letra {
   font-weight: 500;
   color: #334155;
@@ -411,7 +451,6 @@ button:disabled {
   min-width: auto;
 }
 
-/* Botões de ação */
 #atividade-objetiva .atividade-acoes {
   display: flex;
   flex-direction: row;
@@ -421,7 +460,6 @@ button:disabled {
   margin-top: 0;
 }
 
-/* Btn Responder (desabilitado por padrão) */
 #atividade-objetiva .btn-responder {
   display: flex;
   flex-direction: column;
@@ -452,7 +490,6 @@ button:disabled {
   background: #333;
 }
 
-/* Btn Alterar */
 #atividade-objetiva .btn-alterar {
   display: flex;
   flex-direction: column;
@@ -482,7 +519,6 @@ button:disabled {
   background: #333;
 }
 
-/* Feedback de erro */
 #atividade-objetiva .feedback-erro {
   box-sizing: border-box;
   position: relative;
@@ -523,27 +559,22 @@ button:disabled {
   background: #fff;
 }
 
-.section-faq .section-title {  
+.section-faq .section-title {
   letter-spacing: 0;
   text-align: center;
   color: #0c0a08;
-   margin: 0 auto;
-   margin-bottom: 0.75rem;
-   font: 700 36px/40px "Inter", sans-serif;
-   leading-trim: NONE;
-   letter-spacing: 0px;
-   vertical-align: middle;
+  margin: 0 auto;
+  margin-bottom: 0.75rem;
+  font: 700 36px/40px "Inter", sans-serif;
 }
 
 .section-faq .section-subtitle {
-  font: 400 16px/24px "Inter", sans-serif;    
+  font: 400 16px/24px "Inter", sans-serif;
   letter-spacing: 0;
   text-align: center;
   color: #525252;
   margin-bottom: 4rem;
-   leading-trim: NONE;
-   line-height: 28px;
-   vertical-align: middle;
+  line-height: 28px;
 }
 
 .faq-lista {
@@ -554,7 +585,6 @@ button:disabled {
   margin: 0 auto;
 }
 
-/* --- Item fechado --- */
 details.faq-item {
   border: 1px solid #e8e8e8;
   border-radius: 12px;
@@ -564,14 +594,12 @@ details.faq-item {
     border-color 0.2s;
 }
 
-/* --- Item aberto --- */
 details.faq-item[open] {
   background: #77b902;
   border: 1px solid #000000;
   border-radius: 12px;
 }
 
-/* --- Pergunta (summary) --- */
 summary.faq-pergunta {
   padding: 1.125rem 1.5rem;
   font-family: "Inter", sans-serif;
@@ -594,18 +622,15 @@ summary.faq-pergunta::-webkit-details-marker {
   display: none;
 }
 
-/* Remove o ::after antigo (ícone +) */
 summary.faq-pergunta::after {
   content: none;
 }
 
-/* Pergunta aberta: texto branco */
 details.faq-item[open] summary.faq-pergunta {
   color: #ffffff;
   background: transparent;
 }
 
-/* --- Ícone chevron --- */
 .faq-icon {
   display: inline-flex;
   align-items: center;
@@ -631,13 +656,11 @@ details.faq-item[open] summary.faq-pergunta {
   fill: currentColor;
 }
 
-/* Aberto: inverte (-180deg) e fica branco */
 details.faq-item[open] .faq-icon {
   color: #ffffff;
   transform: rotate(-180deg);
 }
 
-/* --- Resposta --- */
 .faq-resposta {
   padding: 16px 24px 24px 24px;
   border-top: 1px solid rgba(229, 231, 235, 0.5);
