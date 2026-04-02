@@ -21,7 +21,7 @@
 
 body {
   font-family: 'Inter', 'Segoe UI', sans-serif;
-  background: var(--body-bg);
+  background: #F7F8F5;
   color: var(--text);
 }
 
