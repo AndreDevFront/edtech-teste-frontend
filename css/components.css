@@ -7,7 +7,6 @@
 
 .cards-swiper {
   padding-bottom: 2.5rem !important;
-  /* espaço vertical para o card central "flutuar" */
   padding-top: 8px;
   overflow: visible !important;   
 }
@@ -19,7 +18,6 @@
 
 .cards-swiper .swiper-slide {
   height: auto;
-  /* alinha verticalmente os slides para o central sobressair */
   display: flex;
   align-items: stretch;
    
@@ -65,7 +63,6 @@
   justify-content: center;
 }
 
-/* Esconde o ícone quando aberto */
 .card.aberto .card-icon {
   display: none;
 }
@@ -80,7 +77,6 @@
   width: 100%;
 }
 
-/* Parágrafo do card fechado: oculto */
 .card-header p {
   display: none;
   font-family: 'Inter', sans-serif;
@@ -92,7 +88,6 @@
   margin: 0;
 }
 
-/* Parágrafo visível apenas quando aberto */
 .card.aberto .card-header p {
   display: block;
 }
@@ -106,7 +101,7 @@
   border-top: none;
 }
 
-/* ---- Botão Abrir (card fechado) ---- */
+/* ---- Botão Abrir ---- */
 .card-btn-abrir {
   box-sizing: border-box;
   display: flex;
@@ -134,7 +129,6 @@
   border-color: #0C0A08;
 }
 
-/* ---- Botão Fechar (card aberto) ---- */
 .card.aberto .card-btn-abrir {
   background: transparent;
   border: 1px solid #4B5563;
@@ -148,7 +142,6 @@
   border-color: #9CA3AF;
 }
 
-/* ---- card-body (conteúdo expandido) ---- */
 .card-body {
   display: none;
 }
@@ -681,4 +674,66 @@ details.faq-item[open] .faq-icon {
 .faq-resposta p {
   margin: 0;
   color: #ffffff;
+}
+
+/* ===========================
+   VÍDEO (YouTube player)
+=========================== */
+.section-video {
+  background: var(--body-bg);
+}
+
+.video-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 40px;
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.video-header {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.video-header .section-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 900;
+  font-size: 48px;
+  line-height: 48px;
+  letter-spacing: -1.2px;
+  color: #171D0C;
+  margin: 0;
+}
+
+.video-header .section-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #5C6B48;
+  margin: 0;
+  padding-top: 8px;
+}
+
+/* Container 16:9 responsivo */
+.video-player-box {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%; /* 16:9 */
+  background: #000000;
+  box-shadow: 0px 25px 50px -12px rgba(0, 0, 0, 0.25);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.video-player-box iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+  border-radius: 8px;
 }
