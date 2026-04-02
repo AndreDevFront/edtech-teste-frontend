@@ -253,7 +253,7 @@ button:disabled {
   background: #e8f5e9;
   color: #1b5e20;
 }
-
+.feedback-fechar { float: right; }
 .feedback-erro {
   background: #fff8e1;
   color: #6d4c00;
