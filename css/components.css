@@ -9,8 +9,13 @@
   padding-bottom: 2.5rem !important;
   /* espaço vertical para o card central "flutuar" */
   padding-top: 8px;
-  overflow: visible !important;
-   max-width: 960px;
+  overflow: visible !important;   
+}
+@media (min-width: 1024px) {
+   .cards-swiper {
+      max-width: 960px;
+      border: 1px solid red;
+   }
 }
 
 .cards-swiper .swiper-slide {
