@@ -404,18 +404,23 @@ body {
 .section-quote {
   background: var(--bg-dark);
   padding: 4rem 0;
+   max-width: 784px;
+   
 }
 
 .destaque-quote {
-  font-size: 1rem;
-  color: var(--muted);
+  font: 500 italic 1.125rem Inter;
+  color: #FFF;
   line-height: 1.85;
-  max-width: 860px;
+  max-width: 720px;
   margin: 0 auto;
-  text-align: center;
-  font-style: italic;
+  text-align: center;  
   border: none;
   padding: 0;
+   leading-trim: NONE;
+   line-height: 29.25px;
+   letter-spacing: 0px;
+   vertical-align: middle;
 }
 
 /* FOOTER */
