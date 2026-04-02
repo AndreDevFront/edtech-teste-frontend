@@ -10,6 +10,7 @@
   /* espaço vertical para o card central "flutuar" */
   padding-top: 8px;
   overflow: visible !important;
+   max-width: 960px;
 }
 
 .cards-swiper .swiper-slide {
@@ -17,7 +18,7 @@
   /* alinha verticalmente os slides para o central sobressair */
   display: flex;
   align-items: stretch;
-   max-width: 960px;
+   
 }
 
 /* ---- Card base (fechado / lateral) ---- */
