@@ -363,6 +363,7 @@ summary.faq-pergunta {
   gap: 1rem;
   color: var(--text);
   transition: color 0.2s;
+   background: #F5F5F5;
 }
 
 summary.faq-pergunta::-webkit-details-marker {
