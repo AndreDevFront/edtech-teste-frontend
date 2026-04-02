@@ -13,8 +13,7 @@
 }
 @media (min-width: 1024px) {
    .cards-swiper {
-      max-width: 960px;
-      border: 1px solid red;
+      max-width: 960px;      
    }
 }
 
