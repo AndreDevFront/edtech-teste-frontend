@@ -692,6 +692,11 @@ details.faq-item[open] .faq-icon {
   margin: 0 auto;
 }
 
+@media (min-width: 1024px) {
+   .video-wrap { padding: 0; }
+}
+
+
 .video-header {
   display: flex;
   flex-direction: column;
