@@ -1,0 +1,92 @@
+/* ===== LAYOUT PRINCIPAL ===== */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+header {
+  background-color: #1a1a2e;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+}
+
+main {
+  padding: 2rem 0;
+}
+
+/* ===== SEÇÃO: VIDEO + IMAGEM LATERAL ===== */
+.section-hero {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+  margin-bottom: 3rem;
+}
+
+.video-wrapper {
+  flex: 2;
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 8px;
+  background: #000;
+}
+
+.video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.imagem-lateral {
+  flex: 1;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.imagem-lateral img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ===== SEÇÕES GERAIS ===== */
+.section {
+  margin-bottom: 3rem;
+}
+
+.section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 3px solid #005fcc;
+  color: #1a1a2e;
+}
+
+/* ===== FOOTER ===== */
+footer {
+  background: #1a1a2e;
+  color: #aaa;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.875rem;
+  margin-top: 3rem;
+}

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO -->
+  <meta name="description" content="Plataforma de cursos EdTech: aprenda desenvolvimento web com aulas práticas, atividades interativas e conteúdo atualizado para o mercado de tecnologia." />
+  <meta name="robots" content="index, follow" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Curso EdTech — Plataforma de Cursos" />
+  <meta property="og:description" content="Aprenda desenvolvimento web com aulas práticas e atividades interativas." />
+  <meta property="og:type" content="website" />
+
+  <title>Curso EdTech</title>
+
+  <!-- CSS Próprio -->
+  <link rel="stylesheet" href="css/reset.css" />
+  <link rel="stylesheet" href="css/layout.css" />
+  <link rel="stylesheet" href="css/components.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+
+  <!-- Swiper CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+</head>
+<body>
+
+  <!-- HEADER -->
+  <header>
+    <div class="container">
+      <h1>EdTech — Plataforma de Cursos</h1>
+    </div>
+  </header>
+
+  <main>
+    <div class="container">
+
+      <!-- SEÇÃO 1: VIDEO + IMAGEM LATERAL -->
+      <section class="section section-hero" aria-label="Aula em destaque">
+
+        <div class="video-wrapper">
+          <iframe
+            src="https://www.youtube-nocookie.com/embed/Ejkb_YpuHWs"
+            title="Vídeo da aula — Introdução ao Desenvolvimento Web"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen
+          ></iframe>
+        </div>
+
+        <aside class="imagem-lateral" aria-label="Imagem ilustrativa do curso">
+          <img
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80"
+            alt="Capa do curso EdTech"
+            width="600"
+            height="400"
+            fetchpriority="high"
+          />
+        </aside>
+
+      </section>
+
+      <!-- SEÇÃO 2: RECURSO DE DESTAQUE -->
+      <section class="section" aria-labelledby="titulo-destaque">
+        <div class="destaque">
+          <h2 id="titulo-destaque">🚀 Novo Módulo Disponível!</h2>
+          <p>Mergulhe no conteúdo mais avançado da trilha e eleve seu nível profissional.</p>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 3: SLIDER -->
+      <section class="section" aria-labelledby="titulo-slider">
+        <h2 class="section-title" id="titulo-slider">Galeria do Curso</h2>
+        <div class="swiper" role="region" aria-label="Slider de imagens do curso">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80" alt="Programação e desenvolvimento web" width="1200" height="400" loading="lazy" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80" alt="Código em tela" width="1200" height="400" loading="lazy" />
+            </div>
+            <div class="swiper-slide">
+              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80" alt="Pessoas estudando juntas" width="1200" height="400" loading="lazy" />
+            </div>
+          </div>
+          <div class="swiper-pagination"></div>
+          <div class="swiper-button-prev" aria-label="Slide anterior"></div>
+          <div class="swiper-button-next" aria-label="Próximo slide"></div>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 4: PLAYER DE ÁUDIO -->
+      <section class="section" aria-labelledby="titulo-audio">
+        <h2 class="section-title" id="titulo-audio">🎧 Podcast da Aula</h2>
+        <div class="audio-player">
+          <p>Ouça o resumo desta aula em áudio:</p>
+          <audio controls aria-label="Player de áudio da aula">
+            <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
+            Seu navegador não suporta o elemento de áudio.
+          </audio>
+        </div>
+      </section>
+
+      <!-- SEÇÃO 5: CARDS INTERATIVOS -->
+      <section class="section" aria-labelledby="titulo-cards">
+        <h2 class="section-title" id="titulo-cards">📚 Módulos do Curso</h2>
+        <div class="cards-grid">
+
+          <article class="card" aria-expanded="false">
+            <div class="card-header">
+              <h3>Módulo 1 — Introdução</h3>
+              <button class="card-btn-abrir" aria-controls="card-body-1">Abrir</button>
+            </div>
+            <div class="card-body" id="card-body-1" aria-hidden="true">
+              <p>Conteúdo introdutório do módulo 1. Aqui você vai aprender os fundamentos essenciais para avançar na trilha.</p>
+            </div>
+          </article>
+
+          <article class="card" aria-expanded="false">
+            <div class="card-header">
+              <h3>Módulo 2 — Prática</h3>
+              <button class="card-btn-abrir" aria-controls="card-body-2">Abrir</button>
+            </div>
+            <div class="card-body" id="card-body-2" aria-hidden="true">
+              <p>Exercícios práticos e projetos guiados para consolidar o aprendizado do módulo 2.</p>
+            </div>
+          </article>
+
+          <article class="card" aria-expanded="false">
+            <div class="card-header">
+              <h3>Módulo 3 — Avançado</h3>
+              <button class="card-btn-abrir" aria-controls="card-body-3">Abrir</button>
+            </div>
+            <div class="card-body" id="card-body-3" aria-hidden="true">
+              <p>Tópicos avançados para quem deseja ir além e se destacar no mercado de trabalho.</p>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- SEÇÃO 6: ATIVIDADES -->
+      <section class="section" aria-labelledby="titulo-atividades">
+        <h2 class="section-title" id="titulo-atividades">✏️ Atividades</h2>
+
+        <!-- Atividade Discursiva -->
+        <div class="atividade" id="atividade-discursiva">
+          <h3>Atividade 1 — Discursiva</h3>
+          <label for="resposta-discursiva">O que você aprendeu nesta aula? Descreva com suas palavras:</label>
+          <textarea
+            id="resposta-discursiva"
+            placeholder="Digite sua resposta aqui..."
+            aria-describedby="feedback-discursiva"
+          ></textarea>
+          <div class="atividade-acoes">
+            <button class="btn-responder" id="btn-responder-discursiva">Responder</button>
+            <button class="btn-alterar" id="btn-alterar-discursiva" disabled>Alterar</button>
+          </div>
+          <div class="feedback" id="feedback-discursiva" role="alert" aria-live="polite">
+            ✅ Resposta registrada com sucesso!
+          </div>
+        </div>
+
+        <!-- Atividade Objetiva -->
+        <div class="atividade" id="atividade-objetiva">
+          <h3>Atividade 2 — Objetiva</h3>
+          <p>Qual é o principal benefício do Kubernetes?</p>
+          <ul class="opcoes-lista" role="group" aria-label="Opções de resposta">
+            <li>
+              <label class="opcao-item">
+                <input type="checkbox" name="objetiva" value="0" />
+                Escrever código mais rápido
+              </label>
+            </li>
+            <li>
+              <label class="opcao-item">
+                <input type="checkbox" name="objetiva" value="1" />
+                Orquestrar e escalar containers automaticamente
+              </label>
+            </li>
+            <li>
+              <label class="opcao-item">
+                <input type="checkbox" name="objetiva" value="2" />
+                Substituir o banco de dados
+              </label>
+            </li>
+            <li>
+              <label class="opcao-item">
+                <input type="checkbox" name="objetiva" value="3" />
+                Criar interfaces gráficas
+              </label>
+            </li>
+          </ul>
+          <div class="atividade-acoes">
+            <button class="btn-responder" id="btn-responder-objetiva" disabled>Responder</button>
+            <button class="btn-alterar" id="btn-alterar-objetiva" disabled>Alterar</button>
+          </div>
+          <div class="feedback" id="feedback-objetiva" role="alert" aria-live="polite">
+            ✅ Resposta objetiva registrada!
+          </div>
+        </div>
+
+      </section>
+
+      <!-- SEÇÃO 7: FAQ -->
+      <section class="section" aria-labelledby="titulo-faq">
+        <h2 class="section-title" id="titulo-faq">❓ Perguntas Frequentes</h2>
+        <div class="faq-lista">
+
+          <details class="faq-item">
+            <summary class="faq-pergunta">Quanto tempo tenho acesso ao curso?</summary>
+            <div class="faq-resposta">
+              <p>Você tem acesso ilimitado ao conteúdo após a compra, incluindo todas as atualizações futuras.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-pergunta">O curso emite certificado?</summary>
+            <div class="faq-resposta">
+              <p>Sim! Ao concluir todas as atividades e atingir a nota mínima, você recebe o certificado digital.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-pergunta">Posso assistir pelo celular?</summary>
+            <div class="faq-resposta">
+              <p>Sim, a plataforma é totalmente responsiva e funciona em qualquer dispositivo.</p>
+            </div>
+          </details>
+
+          <details class="faq-item">
+            <summary class="faq-pergunta">Há suporte para dúvidas?</summary>
+            <div class="faq-resposta">
+              <p>Sim, você pode enviar dúvidas diretamente pelo fórum da turma, respondido em até 48 horas.</p>
+            </div>
+          </details>
+
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 EdTech. Todos os direitos reservados.</p>
+  </footer>
+
+  <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+
+  <!-- Scripts -->
+  <script src="js/slider.js" defer></script>
+  <script src="js/cards.js" defer></script>
+  <script src="js/atividades.js" defer></script>
+  <script src="js/accordion.js" defer></script>
+</body>
+</html>
