@@ -273,9 +273,23 @@
             <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
           </div>
         </div>
+
         <div class="atividade" id="atividade-objetiva">
-          <h3 class="atividade-titulo">Atividade Objetiva</h3>
-          <p class="atividade-desc">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+          <!-- Cabeçalho: círculo verde + ícone + título + descrição -->
+          <div class="atividade-header">
+            <div class="atividade-icon-wrap" aria-hidden="true">
+              <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 2C5.58172 2 2 5.58172 2 10C2 14.4183 5.58172 18 10 18C14.4183 18 18 14.4183 18 10C18 5.58172 14.4183 2 10 2Z" fill="#76B900"/>
+                <path d="M10 6C9.44772 6 9 6.44772 9 7C9 7.55228 9.44772 8 10 8C10.5523 8 11 7.55228 11 7C11 6.44772 10.5523 6 10 6Z" fill="white"/>
+                <path d="M9 9.5C9 9.22386 9.22386 9 9.5 9H10C10.2761 9 10.5 9.22386 10.5 9.5V13.5C10.5 13.7761 10.2761 14 10 14H9.5C9.22386 14 9 13.7761 9 13.5V9.5Z" fill="white"/>
+              </svg>
+            </div>
+            <div class="atividade-textos">
+              <h3 class="atividade-titulo">Atividade Objetiva</h3>
+              <p class="atividade-desc">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
+            </div>
+          </div>
+
           <ul class="opcoes-lista" role="group" aria-label="Opções de resposta">
             <li><label class="opcao-item"><input type="checkbox" name="objetiva" value="A" /><span class="opcao-letra">A)</span> Lorem Ipsum is simply dummy text.</label></li>
             <li><label class="opcao-item"><input type="checkbox" name="objetiva" value="B" /><span class="opcao-letra">B)</span> Lorem Ipsum is simply dummy text.</label></li>
