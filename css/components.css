@@ -328,40 +328,53 @@ button:disabled {
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
+  max-width: 848px;
+  margin: 0 auto;
 }
 
+/* --- Item fechado --- */
 details.faq-item {
-  border: 1.5px solid #e8e8e8;
-  border-radius: var(--radius-md);
+  border: 1px solid #e8e8e8;
+  border-radius: 12px;
   overflow: hidden;
-  transition: border-color 0.2s;
+  transition: background 0.2s, border-color 0.2s;
 }
 
+/* --- Item aberto --- */
 details.faq-item[open] {
-  border-color: var(--accent);
+  background: #77B902;
+  border: 1px solid #000000;
+  border-radius: 12px;
 }
 
+/* --- Pergunta (summary) --- */
 summary.faq-pergunta {
   padding: 1.125rem 1.5rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
   font-weight: 600;
-  font-size: 0.95rem;
+  line-height: 28px;
+  letter-spacing: 0;
   cursor: pointer;
   list-style: none;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  transition: background 0.2s;
   color: var(--text);
+  transition: color 0.2s, background 0.2s;
 }
 
 summary.faq-pergunta::-webkit-details-marker {
   display: none;
 }
 
+/* Pergunta com item aberto: texto branco, sem background extra */
 details.faq-item[open] summary.faq-pergunta {
-  background: rgba(74,222,0,0.06);
+  color: #ffffff;
+  background: transparent;
 }
 
+/* Ícone +/× */
 summary.faq-pergunta::after {
   content: '+';
   font-size: 1.4rem;
@@ -373,13 +386,22 @@ summary.faq-pergunta::after {
 
 details.faq-item[open] summary.faq-pergunta::after {
   transform: rotate(45deg);
-  color: var(--accent);
+  color: #ffffff;
 }
 
+/* --- Resposta --- */
 .faq-resposta {
-  padding: 1rem 1.5rem 1.25rem;
-  color: var(--text-light);
-  line-height: 1.75;
-  font-size: 0.9rem;
-  border-top: 1px solid #f0f0f0;
+  padding: 16px 24px 24px 24px;
+  border-top: 1px solid rgba(229, 231, 235, 0.50);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 26px;
+  letter-spacing: 0;
+  color: #ffffff;
+}
+
+.faq-resposta p {
+  margin: 0;
+  color: #ffffff;
 }
