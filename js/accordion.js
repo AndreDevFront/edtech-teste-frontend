@@ -1,4 +1,4 @@
-// js/accordion.js
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const items = document.querySelectorAll('.faq-item');
