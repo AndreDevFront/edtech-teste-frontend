@@ -405,7 +405,8 @@ body {
   background: var(--bg-dark);
   padding: 4rem 0;
    max-width: 784px;
-   
+   margin: 0 auto;
+   margin-bottom: 3.5rem;
 }
 
 .destaque-quote {
