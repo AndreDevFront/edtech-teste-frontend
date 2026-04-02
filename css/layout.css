@@ -421,21 +421,19 @@ body {
   gap: 1rem;
 }
 
-.footer-brand {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--white);
-  letter-spacing: -0.02em;
-}
-
-.footer-brand-rest {
-  font-weight: 400;
-  opacity: 0.7;
-  font-size: 0.85rem;
-  letter-spacing: 0.05em;
+.footer-logo-link {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
 }
 
 .footer-copy {
-  font-size: 0.8rem;
-  color: var(--muted);
+  font-family: 'Inter', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 20px;
+  letter-spacing: 0;
+  color: #64748B;
+  vertical-align: middle;
+  margin: 0;
 }
