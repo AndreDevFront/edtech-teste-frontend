@@ -552,9 +552,7 @@ button:disabled {
 /* ===========================
    FAQ
 =========================== */
-.section-faq {
-  background: #fff;
-}
+.section-faq {}
 
 .section-faq .section-title {
   letter-spacing: 0;
