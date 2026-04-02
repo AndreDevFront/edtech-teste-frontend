@@ -3,89 +3,71 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-  <!-- SEO -->
   <meta name="description" content="Plataforma de cursos EdTech: aprenda desenvolvimento web com aulas práticas, atividades interativas e conteúdo atualizado para o mercado de tecnologia." />
   <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph -->
   <meta property="og:title" content="Curso EdTech — Plataforma de Cursos" />
   <meta property="og:description" content="Aprenda desenvolvimento web com aulas práticas e atividades interativas." />
   <meta property="og:type" content="website" />
-
   <title>Curso EdTech</title>
-
-  <!-- Google Fonts: Inter -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-
-  <!-- Preconnect CDN -->
   <link rel="preconnect" href="https://images.unsplash.com" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" />
-
-  <!-- CSS Próprio -->
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/responsive.css" />
-
-  <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 </head>
 <body>
 
-  <!-- HERO SECTION -->
+  <!-- ===================== HERO ===================== -->
   <section class="hero" aria-label="Apresentação do curso">
-    <div class="hero-bg-lines" aria-hidden="true"></div>
+    <div class="hero-glow" aria-hidden="true"></div>
     <div class="container hero-container">
-
       <div class="hero-content">
-        <div class="hero-title-wrapper">
+        <div class="hero-title-bar">
           <h1 class="hero-title">
-            Aprenda com os<br />
-            melhores, seja <span class="hero-accent">EdTech</span>
+            Lorem ipsum dolor,<br />sit <span class="hero-accent">amet</span>
           </h1>
         </div>
         <p class="hero-desc">
           It is a long established fact that a reader will be distracted by
           the readable content of a page when looking at its layout.
         </p>
-        <a href="#atividades" class="hero-btn">
-          Começar agora <span aria-hidden="true">→</span>
+        <a href="#atividades" class="hero-btn" aria-label="Ir para as atividades">
+          Lorem Ipsum <span aria-hidden="true">→</span>
         </a>
       </div>
-
       <div class="hero-visual" aria-hidden="true">
         <div class="hero-mockup">
-          <div class="mockup-bar">
-            <span class="dot red"></span>
-            <span class="dot yellow"></span>
-            <span class="dot green"></span>
+          <div class="mockup-topbar">
+            <span class="mdot red"></span>
+            <span class="mdot yellow"></span>
+            <span class="mdot green"></span>
           </div>
           <div class="mockup-body">
             <div class="mockup-sidebar">
-              <div class="mockup-line"></div>
-              <div class="mockup-line short"></div>
-              <div class="mockup-btn-mini"></div>
+              <div class="mline"></div>
+              <div class="mline short"></div>
+              <div class="mline short"></div>
+              <div class="mline-btn"></div>
             </div>
             <div class="mockup-main">
               <div class="mockup-chart">
-                <svg viewBox="0 0 200 80" preserveAspectRatio="none">
-                  <polyline
-                    points="0,70 30,55 60,60 90,35 120,40 150,20 180,25 200,10"
-                    fill="none"
-                    stroke="#4ADE00"
-                    stroke-width="2.5"
-                  />
-                  <polyline
-                    points="0,70 30,55 60,60 90,35 120,40 150,20 180,25 200,10 200,80 0,80"
-                    fill="rgba(74,222,0,0.08)"
-                    stroke="none"
-                  />
+                <svg viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true">
+                  <defs>
+                    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#4ADE00" stop-opacity="0.25"/>
+                      <stop offset="100%" stop-color="#4ADE00" stop-opacity="0"/>
+                    </linearGradient>
+                  </defs>
+                  <polyline points="0,80 30,65 55,68 80,45 105,50 135,28 165,32 195,15 220,10" fill="none" stroke="#4ADE00" stroke-width="2.5" stroke-linejoin="round"/>
+                  <polygon points="0,80 30,65 55,68 80,45 105,50 135,28 165,32 195,15 220,10 220,90 0,90" fill="url(#chartGrad)"/>
                 </svg>
               </div>
-              <div class="mockup-cards">
+              <div class="mockup-cards-grid">
                 <div class="mockup-card"></div>
                 <div class="mockup-card"></div>
               </div>
@@ -93,124 +75,147 @@
           </div>
         </div>
       </div>
-
     </div>
   </section>
 
   <main>
-    <div class="container">
 
-      <!-- SEÇÃO 1: VIDEO + IMAGEM LATERAL -->
-      <section class="section section-media" aria-label="Aula em destaque">
-
-        <div class="video-wrapper">
-          <iframe
-            src="https://www.youtube-nocookie.com/embed/Ejkb_YpuHWs"
-            title="Vídeo da aula — Introdução ao Desenvolvimento Web"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen
-          ></iframe>
+    <!-- ===================== SEÇÃO: TEXTO + IMAGEM ===================== -->
+    <section class="section section-texto-imagem" aria-labelledby="titulo-intro">
+      <div class="container section-texto-imagem-inner">
+        <div class="texto-imagem-content">
+          <h2 id="titulo-intro">Lorem ipsum dolor, sit amet consectetur adipisicing elit</h2>
+          <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
         </div>
+        <div class="texto-imagem-media">
+          <div class="video-wrapper">
+            <iframe
+              src="https://www.youtube-nocookie.com/embed/Ejkb_YpuHWs"
+              title="Vídeo da aula — Introdução ao Desenvolvimento Web"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
 
-        <aside class="imagem-lateral" aria-label="Imagem ilustrativa do curso">
+    <!-- ===================== SEÇÃO: DUAS IMAGENS ===================== -->
+    <section class="section section-two-images" aria-label="Galeria de imagens">
+      <div class="container two-images-grid">
+        <div class="two-img-item">
           <img
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&q=80"
-            alt="Capa do curso EdTech"
-            width="600"
-            height="400"
-            fetchpriority="high"
+            src="https://images.unsplash.com/photo-1505118380757-91f5f45d8de4?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Onda do mar"
+            width="800"
+            height="500"
+            loading="lazy"
           />
-        </aside>
-
-      </section>
-
-      <!-- SEÇÃO 2: RECURSO DE DESTAQUE -->
-      <section class="section" aria-labelledby="titulo-destaque">
-        <div class="destaque">
-          <h2 id="titulo-destaque">🚀 Novo Módulo Disponível!</h2>
-          <p>Mergulhe no conteúdo mais avançado da trilha e eleve seu nível profissional.</p>
+          <div class="two-img-text">
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit voluptatum voluptatibus aperiam cum quasi repudiandae nostrum, sed amet quam maiores eum consectetur ipsa dolores quis ducimus, iusto dicta consequuntur facere!</p>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, quia! Cumque ipsum harum fuga perferendis autem incidunt dolorem voluptatum illo.</p>
+          </div>
         </div>
-      </section>
+        <div class="two-img-item">
+          <img
+            src="https://images.unsplash.com/photo-1441974231531-c6227db76b6e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Estrada por floresta densa"
+            width="800"
+            height="500"
+            loading="lazy"
+          />
+        </div>
+      </div>
+    </section>
 
-      <!-- SEÇÃO 3: SLIDER -->
-      <section class="section" aria-labelledby="titulo-slider">
-        <h2 class="section-title" id="titulo-slider">Galeria do Curso</h2>
-        <div class="swiper" role="region" aria-label="Slider de imagens do curso">
+    <!-- ===================== SEÇÃO: BLOCKQUOTE ===================== -->
+    <section class="section section-quote" aria-label="Destaque">
+      <div class="container">
+        <blockquote class="destaque-quote">
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. Labore nihil corporis suscipit soluta dolorem id consectetur, tenetur nesciunt ducimus maiores sequi veritatis nostrum, esse eaque delectus ea laboriosam repellendus! Ipsum nobis, mollitia facilis praesentium cupiditate quidem eaque itaque nulla ab obcaecati sapiente sequi porro, totam, non molestias excepturi explicabo adipisci deleniti architecto animi!
+        </blockquote>
+      </div>
+    </section>
+
+    <!-- ===================== SEÇÃO: SLIDER / CARDS ===================== -->
+    <section class="section section-cards" aria-labelledby="titulo-cards">
+      <div class="container">
+        <div class="swiper cards-swiper" role="region" aria-label="Cards do curso">
           <div class="swiper-wrapper">
+
             <div class="swiper-slide">
-              <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1200&q=80" alt="Programação e desenvolvimento web" width="1200" height="400" loading="lazy" />
+              <article class="card" aria-expanded="false">
+                <div class="card-header">
+                  <span class="card-icon" aria-hidden="true">?</span>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe excepturi, dolores perspiciatis commodi eum dolore nesciunt tempore similique at quas.</p>
+                </div>
+                <div class="card-footer">
+                  <button class="card-btn-abrir" aria-controls="card-body-1">Abrir</button>
+                </div>
+                <div class="card-body" id="card-body-1" aria-hidden="true">
+                  <p>Conteúdo detalhado do módulo 1. Aqui você vai aprender os fundamentos essenciais para avançar na trilha de aprendizado.</p>
+                </div>
+              </article>
             </div>
+
             <div class="swiper-slide">
-              <img src="https://images.unsplash.com/photo-1461749280684-dccba630e2f6?w=1200&q=80" alt="Código em tela" width="1200" height="400" loading="lazy" />
+              <article class="card" aria-expanded="false">
+                <div class="card-header">
+                  <span class="card-icon" aria-hidden="true">?</span>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe excepturi, dolores perspiciatis commodi eum dolore nesciunt tempore similique at quas.</p>
+                </div>
+                <div class="card-footer">
+                  <button class="card-btn-abrir" aria-controls="card-body-2">Abrir</button>
+                </div>
+                <div class="card-body" id="card-body-2" aria-hidden="true">
+                  <p>Conteúdo detalhado do módulo 2. Exercícios práticos e projetos guiados para consolidar o aprendizado.</p>
+                </div>
+              </article>
             </div>
+
             <div class="swiper-slide">
-              <img src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=1200&q=80" alt="Pessoas estudando juntas" width="1200" height="400" loading="lazy" />
+              <article class="card" aria-expanded="false">
+                <div class="card-header">
+                  <span class="card-icon" aria-hidden="true">?</span>
+                  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe excepturi, dolores perspiciatis commodi eum dolore nesciunt tempore similique at quas.</p>
+                </div>
+                <div class="card-footer">
+                  <button class="card-btn-abrir" aria-controls="card-body-3">Fechar</button>
+                </div>
+                <div class="card-body" id="card-body-3" aria-hidden="true">
+                  <p>Conteúdo detalhado do módulo 3. Tópicos avançados para quem deseja se destacar no mercado.</p>
+                </div>
+              </article>
             </div>
+
           </div>
           <div class="swiper-pagination"></div>
-          <div class="swiper-button-prev" aria-label="Slide anterior"></div>
-          <div class="swiper-button-next" aria-label="Próximo slide"></div>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- SEÇÃO 4: PLAYER DE ÁUDIO -->
-      <section class="section" aria-labelledby="titulo-audio">
-        <h2 class="section-title" id="titulo-audio">🎧 Podcast da Aula</h2>
+    <!-- ===================== SEÇÃO: ÁUDIO ===================== -->
+    <section class="section section-audio" aria-labelledby="titulo-audio">
+      <div class="container">
+        <h2 class="section-title" id="titulo-audio">Lorem ipsum dolor, sit amet consectetur adipisicing elit</h2>
+        <p class="section-subtitle">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
         <div class="audio-player">
-          <p>Ouça o resumo desta aula em áudio:</p>
           <audio controls aria-label="Player de áudio da aula">
             <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg" />
             Seu navegador não suporta o elemento de áudio.
           </audio>
         </div>
-      </section>
+      </div>
+    </section>
 
-      <!-- SEÇÃO 5: CARDS INTERATIVOS -->
-      <section class="section" aria-labelledby="titulo-cards">
-        <h2 class="section-title" id="titulo-cards">📚 Módulos do Curso</h2>
-        <div class="cards-grid">
-
-          <article class="card" aria-expanded="false">
-            <div class="card-header">
-              <h3>Módulo 1 — Introdução</h3>
-              <button class="card-btn-abrir" aria-controls="card-body-1">Abrir</button>
-            </div>
-            <div class="card-body" id="card-body-1" aria-hidden="true">
-              <p>Conteúdo introdutório do módulo 1. Aqui você vai aprender os fundamentos essenciais para avançar na trilha.</p>
-            </div>
-          </article>
-
-          <article class="card" aria-expanded="false">
-            <div class="card-header">
-              <h3>Módulo 2 — Prática</h3>
-              <button class="card-btn-abrir" aria-controls="card-body-2">Abrir</button>
-            </div>
-            <div class="card-body" id="card-body-2" aria-hidden="true">
-              <p>Exercícios práticos e projetos guiados para consolidar o aprendizado do módulo 2.</p>
-            </div>
-          </article>
-
-          <article class="card" aria-expanded="false">
-            <div class="card-header">
-              <h3>Módulo 3 — Avançado</h3>
-              <button class="card-btn-abrir" aria-controls="card-body-3">Abrir</button>
-            </div>
-            <div class="card-body" id="card-body-3" aria-hidden="true">
-              <p>Tópicos avançados para quem deseja ir além e se destacar no mercado de trabalho.</p>
-            </div>
-          </article>
-
-        </div>
-      </section>
-
-      <!-- SEÇÃO 6: ATIVIDADES -->
-      <section class="section" id="atividades" aria-labelledby="titulo-atividades">
-        <h2 class="section-title" id="titulo-atividades">✏️ Atividades</h2>
+    <!-- ===================== SEÇÃO: ATIVIDADES ===================== -->
+    <section class="section section-atividades" id="atividades" aria-labelledby="titulo-atividades">
+      <div class="container">
 
         <!-- Atividade Discursiva -->
         <div class="atividade" id="atividade-discursiva">
-          <h3>Atividade 1 — Discursiva</h3>
-          <label for="resposta-discursiva">O que você aprendeu nesta aula? Descreva com suas palavras:</label>
+          <h3 class="atividade-titulo">Atividade discursiva</h3>
+          <p class="atividade-desc">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
           <textarea
             id="resposta-discursiva"
             placeholder="Digite sua resposta aqui..."
@@ -220,38 +225,43 @@
             <button class="btn-responder" id="btn-responder-discursiva">Responder</button>
             <button class="btn-alterar" id="btn-alterar-discursiva" disabled>Alterar</button>
           </div>
-          <div class="feedback" id="feedback-discursiva" role="alert" aria-live="polite">
-            ✅ Resposta registrada com sucesso!
+          <div class="feedback feedback-sucesso" id="feedback-discursiva" role="alert" aria-live="polite">
+            <strong>É isso aí!</strong>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur commodi odio maiores accusamus aspernatur consequatur ipsam dignissimos magnam hic, velit est perferendis explicabo aperiam ratione veritatis labore.</p>
           </div>
         </div>
 
         <!-- Atividade Objetiva -->
         <div class="atividade" id="atividade-objetiva">
-          <h3>Atividade 2 — Objetiva</h3>
-          <p>Qual é o principal benefício do Kubernetes?</p>
+          <h3 class="atividade-titulo">Atividade Objetiva</h3>
+          <p class="atividade-desc">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
           <ul class="opcoes-lista" role="group" aria-label="Opções de resposta">
             <li>
               <label class="opcao-item">
-                <input type="checkbox" name="objetiva" value="0" />
-                Escrever código mais rápido
+                <input type="checkbox" name="objetiva" value="A" />
+                <span class="opcao-letra">A)</span>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </label>
             </li>
             <li>
               <label class="opcao-item">
-                <input type="checkbox" name="objetiva" value="1" />
-                Orquestrar e escalar containers automaticamente
+                <input type="checkbox" name="objetiva" value="B" />
+                <span class="opcao-letra">B)</span>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </label>
             </li>
             <li>
               <label class="opcao-item">
-                <input type="checkbox" name="objetiva" value="2" />
-                Substituir o banco de dados
+                <input type="checkbox" name="objetiva" value="C" />
+                <span class="opcao-letra">C)</span>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </label>
             </li>
             <li>
               <label class="opcao-item">
-                <input type="checkbox" name="objetiva" value="3" />
-                Criar interfaces gráficas
+                <input type="checkbox" name="objetiva" value="D" />
+                <span class="opcao-letra">D)</span>
+                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
               </label>
             </li>
           </ul>
@@ -259,64 +269,65 @@
             <button class="btn-responder" id="btn-responder-objetiva" disabled>Responder</button>
             <button class="btn-alterar" id="btn-alterar-objetiva" disabled>Alterar</button>
           </div>
-          <div class="feedback" id="feedback-objetiva" role="alert" aria-live="polite">
-            ✅ Resposta objetiva registrada!
+          <div class="feedback feedback-erro" id="feedback-objetiva" role="alert" aria-live="polite">
+            <strong>Tente novamente!</strong>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur commodi odio maiores accusamus aspernatur consequatur ipsam dignissimos magnam hic, velit est perferendis explicabo aperiam ratione veritatis labore.</p>
           </div>
         </div>
 
-      </section>
+      </div>
+    </section>
 
-      <!-- SEÇÃO 7: FAQ -->
-      <section class="section" aria-labelledby="titulo-faq">
-        <h2 class="section-title" id="titulo-faq">❓ Perguntas Frequentes</h2>
+    <!-- ===================== SEÇÃO: FAQ ===================== -->
+    <section class="section section-faq" aria-labelledby="titulo-faq">
+      <div class="container">
+        <h2 class="section-title" id="titulo-faq">Perguntas frequentes</h2>
+        <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         <div class="faq-lista">
 
           <details class="faq-item">
-            <summary class="faq-pergunta">Quanto tempo tenho acesso ao curso?</summary>
+            <summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary>
             <div class="faq-resposta">
-              <p>Você tem acesso ilimitado ao conteúdo após a compra, incluindo todas as atualizações futuras.</p>
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more or less normal distribution of letters, as opposed to using Content here.</p>
             </div>
           </details>
 
           <details class="faq-item">
-            <summary class="faq-pergunta">O curso emite certificado?</summary>
+            <summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary>
             <div class="faq-resposta">
-              <p>Sim! Ao concluir todas as atividades e atingir a nota mínima, você recebe o certificado digital.</p>
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
             </div>
           </details>
 
           <details class="faq-item">
-            <summary class="faq-pergunta">Posso assistir pelo celular?</summary>
+            <summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary>
             <div class="faq-resposta">
-              <p>Sim, a plataforma é totalmente responsiva e funciona em qualquer dispositivo.</p>
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
             </div>
           </details>
 
           <details class="faq-item">
-            <summary class="faq-pergunta">Há suporte para dúvidas?</summary>
+            <summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary>
             <div class="faq-resposta">
-              <p>Sim, você pode enviar dúvidas diretamente pelo fórum da turma, respondido em até 48 horas.</p>
+              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
             </div>
           </details>
 
         </div>
-      </section>
+      </div>
+    </section>
 
-    </div>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
-    <div class="container">
-      <p class="footer-logo">dot<span class="footer-dot">.</span></p>
-      <p class="footer-copy">&copy; 2026 EdTech. Todos os direitos reservados.</p>
+  <!-- ===================== FOOTER ===================== -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <p class="footer-brand">dot <span class="footer-brand-rest">DIGITAL GROUP</span></p>
+      <p class="footer-copy">&copy; 2026 DOT Digital Group. Todos os direitos reservados.</p>
     </div>
   </footer>
 
-  <!-- Swiper JS -->
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
-
-  <!-- Scripts -->
   <script src="js/slider.js" defer></script>
   <script src="js/cards.js" defer></script>
   <script src="js/atividades.js" defer></script>

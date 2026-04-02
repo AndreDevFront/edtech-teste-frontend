@@ -1,27 +1,28 @@
-
+// js/slider.js
 document.addEventListener('DOMContentLoaded', () => {
 
-  const swiperEl = document.querySelector('.swiper');
+  const swiperEl = document.querySelector('.cards-swiper');
   if (!swiperEl) return;
 
-  new Swiper('.swiper', {
-    loop: true,
+  new Swiper('.cards-swiper', {
+    loop: false,
+    slidesPerView: 1,
+    spaceBetween: 24,
     pagination: {
       el: '.swiper-pagination',
       clickable: true,
     },
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
+    breakpoints: {
+      640: {
+        slidesPerView: 2,
+      },
+      1024: {
+        slidesPerView: 3,
+      },
     },
-    autoplay: {
-      delay: 4000,
-      disableOnInteraction: false,
-    },
-    speed: 600,
     a11y: {
-      prevSlideMessage: 'Slide anterior',
-      nextSlideMessage: 'Próximo slide',
+      prevSlideMessage: 'Card anterior',
+      nextSlideMessage: 'Próximo card',
     },
   });
 
