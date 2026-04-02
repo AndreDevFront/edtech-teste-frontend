@@ -44,7 +44,6 @@ body {
   align-items: center;
 }
 
-/* SVG de fundo absoluto */
 .hero-bg {
   position: absolute;
   inset: 0;
@@ -54,7 +53,6 @@ body {
   z-index: 0;
 }
 
-/* Barra verde esquerda (rect x=56 w=4 h=96 do Figma) */
 .hero-accent-bar {
   position: absolute;
   left: calc(56px / 1280px * 100%);
@@ -77,7 +75,6 @@ body {
   padding-bottom: 5rem;
 }
 
-/* CONTEÚDO TEXTO */
 .hero-content {
   flex: 1;
   display: flex;
@@ -124,11 +121,6 @@ body {
   transform: translateY(-2px);
 }
 
-/* ===========================
-   MOCKUP — Opção C (HTML/CSS)
-   Baseado nas coords do Figma:
-   rect x=696 y=233 w=496 h=372 rx=16
-=========================== */
 .hero-visual {
   flex: 1;
   display: flex;
@@ -148,7 +140,6 @@ body {
   box-shadow: 0 8px 64px rgba(0,0,0,0.4);
 }
 
-/* Topbar — linha separadora fill-opacity 0.1 no Figma */
 .mockup-topbar {
   display: flex;
   align-items: center;
@@ -164,7 +155,6 @@ body {
   align-items: center;
 }
 
-/* Dots: coords x=713/733/753 y=250 w=12 h=12 rx=6 — Figma */
 .mdot {
   width: 12px;
   height: 12px;
@@ -174,7 +164,6 @@ body {
 .mdot.yellow { background: #EAB308; opacity: 0.8; }
 .mdot.green  { background: #22C55E; opacity: 0.8; }
 
-/* Address bar: rect x=1095 y=252 w=80 h=8 rx=4 — Figma */
 .mockup-addressbar {
   margin-left: auto;
   width: 80px;
@@ -183,13 +172,11 @@ body {
   border-radius: 4px;
 }
 
-/* Body */
 .mockup-body {
   display: flex;
   min-height: 310px;
 }
 
-/* Sidebar — rect x=711 y=295 w=104.5 h=293 rx=8 — Figma */
 .mockup-sidebar {
   width: 104px;
   background: rgba(255,255,255,0.05);
@@ -200,7 +187,6 @@ body {
   gap: 0.55rem;
 }
 
-/* Linhas da sidebar: rect w=88.5 h=8 rx=4 — Figma */
 .msb-line {
   height: 8px;
   background: rgba(255,255,255,0.10);
@@ -211,7 +197,6 @@ body {
 
 .msb-spacer { flex: 1; }
 
-/* Botão sidebar: rect w=88.5 h=32 fill=#76B900 fill-op=0.2 stroke-op=0.3 — Figma */
 .msb-btn {
   height: 32px;
   background: rgba(118,185,0,0.20);
@@ -219,7 +204,6 @@ body {
   border-radius: var(--radius-sm);
 }
 
-/* Main */
 .mockup-main {
   flex: 1;
   padding: 0.85rem;
@@ -229,7 +213,6 @@ body {
   overflow: hidden;
 }
 
-/* Header do conteúdo */
 .mockup-content-header {
   display: flex;
   flex-direction: column;
@@ -245,7 +228,6 @@ body {
 .mch-line.wide   { width: 100%; }
 .mch-line.medium { width: 60%; }
 
-/* Área do gráfico */
 .mockup-chart-wrap {
   background: rgba(255,255,255,0.04);
   border-radius: var(--radius-sm);
@@ -275,7 +257,6 @@ body {
   display: block;
 }
 
-/* Cards inferiores — rect w=345.5 h=84.7 rx=8 — Figma */
 .mockup-cards-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -371,43 +352,81 @@ body {
   flex: 1;
 }
 
-/* DUAS IMAGENS */
+/* ===========================
+   DUAS IMAGENS — Figma specs
+=========================== */
 .section-two-images {
   background: var(--body-bg);
   padding-top: 0;
 }
 
+/* Card externo: fundo branco, borda sutil, sombra, padding 32px */
 .two-images-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-  align-items: start;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 32px;
+  gap: 32px;
+  width: 100%;
+  max-width: 960px;
+  min-height: 394px;
+  background: #FFFFFF;
+  border: 1px solid #F3F4F6;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  margin: 0 auto;
 }
 
+/* Cada coluna ocupa metade do espaço */
+.two-img-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+}
+
+/* Imagem: cobre toda a largura da coluna, altura proporcional ao Figma */
 .two-img-item img {
   width: 100%;
-  height: 280px;
+  height: 257px;
   object-fit: cover;
-  border-radius: var(--radius-md);
+  border-radius: 8px;
   display: block;
-  margin-bottom: 1.25rem;
+  flex-shrink: 0;
+}
+
+/* Textos — apenas no primeiro item */
+.two-img-text {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
 }
 
 .two-img-text p {
-  color: var(--text-light);
-  line-height: 1.75;
-  font-size: 0.95rem;
-  margin-bottom: 0.75rem;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: #5C6B48;
+  margin: 0;
 }
 
-/* BLOCKQUOTE */
+/* ===========================
+   BLOCKQUOTE
+=========================== */
 .section-quote {
   background: var(--bg-dark);
   padding: 4rem 0;
-   max-width: 784px;
-   margin: 0 auto;
-   margin-bottom: 3.5rem;
-   border-radius: 8px;
+  max-width: 784px;
+  margin: 0 auto;
+  margin-bottom: 3.5rem;
+  border-radius: 8px;
 }
 
 .destaque-quote {
@@ -419,13 +438,15 @@ body {
   text-align: center;  
   border: none;
   padding: 0;
-   leading-trim: NONE;
-   line-height: 29.25px;
-   letter-spacing: 0px;
-   vertical-align: middle;
+  leading-trim: NONE;
+  line-height: 29.25px;
+  letter-spacing: 0px;
+  vertical-align: middle;
 }
 
-/* FOOTER */
+/* ===========================
+   FOOTER
+=========================== */
 .site-footer {
   background: var(--bg-dark);
   padding: 2.5rem 0;
