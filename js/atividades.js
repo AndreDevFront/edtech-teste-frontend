@@ -1,115 +1,131 @@
+// js/atividades.js
+// Resposta correta da objetiva
+const RESPOSTA_CORRETA = 'B';
 
 document.addEventListener('DOMContentLoaded', () => {
 
-  // ================================================
-  // ATIVIDADE DISCURSIVA
-  // ================================================
-  const textarea      = document.getElementById('resposta-discursiva');
-  const btnResponder  = document.getElementById('btn-responder-discursiva');
-  const btnAlterar    = document.getElementById('btn-alterar-discursiva');
-  const feedback      = document.getElementById('feedback-discursiva');
+  // ============ DISCURSIVA ============
+  const textarea       = document.getElementById('resposta-discursiva');
+  const btnResponder   = document.getElementById('btn-responder-discursiva');
+  const btnAlterar     = document.getElementById('btn-alterar-discursiva');
+  const feedbackDisc   = document.getElementById('feedback-discursiva');
 
-  function aplicarEstadoDiscursiva(respondido) {
-    textarea.disabled     = respondido;
-    btnResponder.disabled = respondido;
-    btnAlterar.disabled   = !respondido;
-    feedback.classList.toggle('visivel', respondido);
+  function salvarDiscursiva() {
+    sessionStorage.setItem('discursiva_resposta', textarea.value);
+    sessionStorage.setItem('discursiva_respondida', 'true');
   }
 
-  const dadosDiscursiva = JSON.parse(sessionStorage.getItem('discursiva') || 'null');
-  if (dadosDiscursiva) {
-    textarea.value = dadosDiscursiva.resposta;
-    aplicarEstadoDiscursiva(dadosDiscursiva.respondido);
+  function restaurarDiscursiva() {
+    const respondida = sessionStorage.getItem('discursiva_respondida');
+    const texto      = sessionStorage.getItem('discursiva_resposta') || '';
+    if (respondida) {
+      textarea.value    = texto;
+      textarea.disabled = true;
+      btnResponder.disabled = true;
+      btnAlterar.disabled   = false;
+      feedbackDisc.classList.add('visivel');
+    }
   }
+
+  textarea.addEventListener('input', () => {
+    btnResponder.disabled = textarea.value.trim().length === 0;
+  });
 
   btnResponder.addEventListener('click', () => {
     if (!textarea.value.trim()) return;
-    aplicarEstadoDiscursiva(true);
-    sessionStorage.setItem('discursiva', JSON.stringify({
-      resposta:   textarea.value,
-      respondido: true
-    }));
+    salvarDiscursiva();
+    textarea.disabled     = true;
+    btnResponder.disabled = true;
+    btnAlterar.disabled   = false;
+    feedbackDisc.classList.add('visivel');
   });
 
   btnAlterar.addEventListener('click', () => {
-    aplicarEstadoDiscursiva(false);
-    sessionStorage.setItem('discursiva', JSON.stringify({
-      resposta:   textarea.value,
-      respondido: false
-    }));
+    textarea.disabled     = false;
+    btnResponder.disabled = textarea.value.trim().length === 0;
+    btnAlterar.disabled   = true;
+    feedbackDisc.classList.remove('visivel');
+    sessionStorage.removeItem('discursiva_respondida');
+    textarea.focus();
   });
 
+  restaurarDiscursiva();
 
-  // ================================================
-  // ATIVIDADE OBJETIVA
-  // ================================================
-  const opcoes           = document.querySelectorAll('.opcao-item');
-  const checkboxes       = document.querySelectorAll('.opcao-item input[type="checkbox"]');
-  const btnResponderObj  = document.getElementById('btn-responder-objetiva');
-  const btnAlterarObj    = document.getElementById('btn-alterar-objetiva');
-  const feedbackObj      = document.getElementById('feedback-objetiva');
+  // ============ OBJETIVA ============
+  const checkboxes      = document.querySelectorAll('input[name="objetiva"]');
+  const btnRespObj      = document.getElementById('btn-responder-objetiva');
+  const btnAltObj       = document.getElementById('btn-alterar-objetiva');
+  const feedbackObj     = document.getElementById('feedback-objetiva');
+  const opcaoItems      = document.querySelectorAll('.opcao-item');
 
-  function atualizarBtnResponder() {
-    const algumSelecionado = [...checkboxes].some(cb => cb.checked);
-    btnResponderObj.disabled = !algumSelecionado;
+  function getSelectedValues() {
+    return Array.from(checkboxes).filter(c => c.checked).map(c => c.value);
   }
 
-  function destacarSelecionadas() {
-    opcoes.forEach(opcao => {
-      const cb = opcao.querySelector('input');
-      opcao.classList.toggle('selecionada', cb.checked);
+  function salvarObjetiva(valores) {
+    sessionStorage.setItem('objetiva_resposta',   JSON.stringify(valores));
+    sessionStorage.setItem('objetiva_respondida', 'true');
+  }
+
+  function restaurarObjetiva() {
+    const respondida = sessionStorage.getItem('objetiva_respondida');
+    const valores    = JSON.parse(sessionStorage.getItem('objetiva_resposta') || '[]');
+    if (respondida) {
+      checkboxes.forEach(c => {
+        if (valores.includes(c.value)) c.checked = true;
+        c.disabled = true;
+      });
+      atualizarEstiloOpcoes();
+      bloqueiarObjetiva(valores);
+    }
+  }
+
+  function atualizarEstiloOpcoes() {
+    opcaoItems.forEach(label => {
+      const cb = label.querySelector('input');
+      label.classList.toggle('selecionada', cb.checked);
     });
+    btnRespObj.disabled = getSelectedValues().length === 0;
   }
 
-  function aplicarEstadoObjetiva(respondido) {
-    checkboxes.forEach(cb => cb.disabled = respondido);
-    btnResponderObj.disabled = respondido;
-    btnAlterarObj.disabled   = !respondido;
-    feedbackObj.classList.toggle('visivel', respondido);
-  }
+  function bloqueiarObjetiva(valores) {
+    checkboxes.forEach(c => c.disabled = true);
+    btnRespObj.disabled = true;
+    btnAltObj.disabled  = false;
 
-  function obterSelecionadas() {
-    return [...checkboxes]
-      .map((cb, i) => cb.checked ? i : null)
-      .filter(i => i !== null);
-  }
-
-  const dadosObjetiva = JSON.parse(sessionStorage.getItem('objetiva') || 'null');
-  if (dadosObjetiva) {
-    dadosObjetiva.selecionadas.forEach(idx => {
-      if (checkboxes[idx]) checkboxes[idx].checked = true;
-    });
-    destacarSelecionadas();
-    aplicarEstadoObjetiva(dadosObjetiva.respondido);
-    if (!dadosObjetiva.respondido) atualizarBtnResponder();
+    const acertou = valores.includes(RESPOSTA_CORRETA) && valores.length === 1;
+    feedbackObj.classList.remove('feedback-sucesso', 'feedback-erro');
+    if (acertou) {
+      feedbackObj.classList.add('feedback-sucesso');
+      feedbackObj.querySelector('strong').textContent = 'É isso aí!';
+    } else {
+      feedbackObj.classList.add('feedback-erro');
+      feedbackObj.querySelector('strong').textContent = 'Tente novamente!';
+    }
+    feedbackObj.classList.add('visivel');
   }
 
   checkboxes.forEach(cb => {
-    cb.addEventListener('change', () => {
-      destacarSelecionadas();
-      atualizarBtnResponder();
-      sessionStorage.setItem('objetiva', JSON.stringify({
-        selecionadas: obterSelecionadas(),
-        respondido: false
-      }));
-    });
+    cb.addEventListener('change', atualizarEstiloOpcoes);
   });
 
-  btnResponderObj.addEventListener('click', () => {
-    aplicarEstadoObjetiva(true);
-    sessionStorage.setItem('objetiva', JSON.stringify({
-      selecionadas: obterSelecionadas(),
-      respondido: true
-    }));
+  btnRespObj.addEventListener('click', () => {
+    const valores = getSelectedValues();
+    if (!valores.length) return;
+    salvarObjetiva(valores);
+    bloqueiarObjetiva(valores);
   });
 
-  btnAlterarObj.addEventListener('click', () => {
-    aplicarEstadoObjetiva(false);
-    atualizarBtnResponder();
-    sessionStorage.setItem('objetiva', JSON.stringify({
-      selecionadas: obterSelecionadas(),
-      respondido: false
-    }));
+  btnAltObj.addEventListener('click', () => {
+    checkboxes.forEach(c => { c.checked = false; c.disabled = false; });
+    atualizarEstiloOpcoes();
+    btnRespObj.disabled = true;
+    btnAltObj.disabled  = true;
+    feedbackObj.classList.remove('visivel');
+    sessionStorage.removeItem('objetiva_respondida');
+    sessionStorage.removeItem('objetiva_resposta');
   });
+
+  restaurarObjetiva();
 
 });
