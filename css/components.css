@@ -523,15 +523,17 @@ button:disabled {
   background: #fff;
 }
 
-.section-faq .section-title {
-  font-family: "Inter", sans-serif;
-  font-size: 36px;
-  font-weight: 700;
-  line-height: 40px;
+.section-faq .section-title {  
   letter-spacing: 0;
   text-align: center;
   color: #0c0a08;
-  margin-bottom: 0.75rem;
+   margin: 0 auto;
+   margin-bottom: 0.75rem;   
+font: 900 48px/48px "Inter", sans-serif;
+leading-trim: NONE;
+letter-spacing: -1.2px;
+vertical-align: middle;
+
 }
 
 .section-faq .section-subtitle {
