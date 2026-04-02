@@ -407,6 +407,7 @@ body {
    max-width: 784px;
    margin: 0 auto;
    margin-bottom: 3.5rem;
+   border-radius: 8px;
 }
 
 .destaque-quote {
