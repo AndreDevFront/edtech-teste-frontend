@@ -280,7 +280,7 @@ button:disabled {
 }
 
 /* Cabeçalho: ícone + textos */
-#atividade-objetiva .atividade-header {
+.atividade-header {
   display: flex;
   flex-direction: row;
   align-items: flex-start;
@@ -288,7 +288,7 @@ button:disabled {
   align-self: stretch;
 }
 
-#atividade-objetiva .atividade-icon-wrap {
+.atividade-icon-wrap {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -299,8 +299,8 @@ button:disabled {
   flex-shrink: 0;
 }
 
-#atividade-objetiva .atividade-icon-wrap svg,
-#atividade-objetiva .atividade-icon-wrap img {
+.atividade-icon-wrap svg,
+.atividade-icon-wrap img {
   width: 20px;
   height: 20px;
   color: #76b900;
