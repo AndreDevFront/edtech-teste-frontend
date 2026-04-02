@@ -1,22 +1,22 @@
 /* ===========================
-   VARIÁVEIS GLOBAIS — 100% Figma
+   VARIÁVEIS GLOBAIS — Figma
 =========================== */
 :root {
-  /* Cores exatas extraídas do SVG do Figma */
-  --accent:        #76B900;
-  --accent-dim:    rgba(118, 185, 0, 0.12);
-  --accent-glow:   rgba(118, 185, 0, 0.10);
-  --bg-dark:       #0C0A08;
-  --bg-dark2:      #161310;
-  --bg-dark3:      #1e1a16;
-  --white:         #ffffff;
-  --muted:         rgba(255,255,255,0.55);
-  --body-bg:       #ffffff;
-  --text:          #111111;
-  --text-light:    #555555;
-  --radius-sm:     6px;
-  --radius-md:     10px;
-  --radius-lg:     16px;
+  --accent:      #76B900;
+  --accent-dim:  rgba(118,185,0,0.20);
+  --accent-glow: rgba(118,185,0,0.10);
+  --bg-dark:     #0C0A08;
+  --bg-dark2:    rgba(255,255,255,0.05);
+  --bg-dark3:    rgba(255,255,255,0.04);
+  --white:       #ffffff;
+  --muted:       rgba(255,255,255,0.55);
+  --muted-soft:  rgba(255,255,255,0.10);
+  --body-bg:     #ffffff;
+  --text:        #111111;
+  --text-light:  #555555;
+  --radius-sm:   6px;
+  --radius-md:   10px;
+  --radius-lg:   16px;
 }
 
 body {
@@ -33,7 +33,7 @@ body {
 }
 
 /* ===========================
-   HERO — fiel ao SVG do Figma
+   HERO
 =========================== */
 .hero {
   position: relative;
@@ -44,25 +44,40 @@ body {
   align-items: center;
 }
 
-/* SVG de fundo inline com as 3 linhas curvas + blobs exatos do Figma */
+/* SVG de fundo absoluto */
 .hero-bg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
   pointer-events: none;
+  z-index: 0;
+}
+
+/* Barra verde esquerda (rect x=56 w=4 h=96 do Figma) */
+.hero-accent-bar {
+  position: absolute;
+  left: calc(56px / 1280px * 100%);
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 96px;
+  background: linear-gradient(180deg, rgba(118,185,0,0.9) 0%, rgba(118,185,0,0.1) 100%);
+  z-index: 2;
+  border-radius: 2px;
 }
 
 .hero-container {
   position: relative;
-  z-index: 1;
+  z-index: 2;
   display: flex;
   align-items: center;
-  gap: 5rem;
+  gap: 4rem;
   padding-top: 5rem;
   padding-bottom: 5rem;
 }
 
+/* CONTEÚDO TEXTO */
 .hero-content {
   flex: 1;
   display: flex;
@@ -70,13 +85,8 @@ body {
   gap: 1.75rem;
 }
 
-.hero-title-bar {
-  border-left: 3px solid var(--accent);
-  padding-left: 1.25rem;
-}
-
 .hero-title {
-  font-size: clamp(2.2rem, 4.5vw, 3.5rem);
+  font-size: clamp(2rem, 4vw, 3.4rem);
   font-weight: 800;
   color: var(--white);
   line-height: 1.12;
@@ -90,7 +100,7 @@ body {
 .hero-desc {
   font-size: 1rem;
   color: var(--muted);
-  max-width: 440px;
+  max-width: 420px;
   line-height: 1.75;
 }
 
@@ -111,108 +121,192 @@ body {
 }
 
 .hero-btn:hover {
-  filter: brightness(1.1);
+  filter: brightness(1.12);
   transform: translateY(-2px);
 }
 
-/* MOCKUP */
+/* ===========================
+   MOCKUP — Opção C (HTML/CSS)
+   Baseado nas coords do Figma:
+   rect x=696 y=233 w=496 h=372 rx=16
+=========================== */
 .hero-visual {
   flex: 1;
   display: flex;
   justify-content: flex-end;
-}
-
-.hero-mockup {
-  width: 100%;
-  max-width: 500px;
-  background: rgba(255,255,255,0.05);
-  border-radius: var(--radius-lg);
-  border: 1px solid rgba(118,185,0,0.15);
-  box-shadow: 0 0 80px rgba(118,185,0,0.07);
-  overflow: hidden;
-  backdrop-filter: blur(2px);
-}
-
-.mockup-topbar {
-  background: rgba(0,0,0,0.3);
-  padding: 0.65rem 1rem;
-  display: flex;
-  gap: 0.45rem;
   align-items: center;
 }
 
+.mockup-window {
+  width: 100%;
+  max-width: 496px;
+  background: rgba(255,255,255,0.05);
+  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255,255,255,0.10);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  overflow: hidden;
+  box-shadow: 0 8px 64px rgba(0,0,0,0.4);
+}
+
+/* Topbar — linha separadora fill-opacity 0.1 no Figma */
+.mockup-topbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.7rem 1rem;
+  border-bottom: 1px solid rgba(255,255,255,0.10);
+  background: rgba(0,0,0,0.15);
+}
+
+.mockup-dots {
+  display: flex;
+  gap: 5px;
+  align-items: center;
+}
+
+/* Dots: coords x=713/733/753 y=250 w=12 h=12 rx=6 — Figma */
 .mdot {
-  width: 11px;
-  height: 11px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
 }
-/* Cores exatas do SVG do Figma */
-.mdot.red    { background: #EF4444; }
-.mdot.yellow { background: #EAB308; }
-.mdot.green  { background: #22C55E; }
+.mdot.red    { background: #EF4444; opacity: 0.8; }
+.mdot.yellow { background: #EAB308; opacity: 0.8; }
+.mdot.green  { background: #22C55E; opacity: 0.8; }
 
-.mockup-body {
-  display: flex;
-  min-height: 220px;
+/* Address bar: rect x=1095 y=252 w=80 h=8 rx=4 — Figma */
+.mockup-addressbar {
+  margin-left: auto;
+  width: 80px;
+  height: 8px;
+  background: rgba(255,255,255,0.10);
+  border-radius: 4px;
 }
 
+/* Body */
+.mockup-body {
+  display: flex;
+  min-height: 310px;
+}
+
+/* Sidebar — rect x=711 y=295 w=104.5 h=293 rx=8 — Figma */
 .mockup-sidebar {
-  width: 90px;
-  background: rgba(0,0,0,0.25);
+  width: 104px;
+  background: rgba(255,255,255,0.05);
+  border-right: 1px solid rgba(255,255,255,0.06);
   padding: 1rem 0.75rem;
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;
-  border-right: 1px solid rgba(118,185,0,0.08);
+  gap: 0.55rem;
 }
 
-.mline {
+/* Linhas da sidebar: rect w=88.5 h=8 rx=4 — Figma */
+.msb-line {
   height: 8px;
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.10);
   border-radius: 4px;
   width: 100%;
 }
-.mline.short { width: 60%; }
+.msb-line.short { width: 67%; }
 
-.mline-btn {
-  margin-top: auto;
-  height: 26px;
-  background: var(--accent);
+.msb-spacer { flex: 1; }
+
+/* Botão sidebar: rect w=88.5 h=32 fill=#76B900 fill-op=0.2 stroke-op=0.3 — Figma */
+.msb-btn {
+  height: 32px;
+  background: rgba(118,185,0,0.20);
+  border: 1px solid rgba(118,185,0,0.30);
   border-radius: var(--radius-sm);
-  opacity: 0.2;
 }
 
+/* Main */
 .mockup-main {
   flex: 1;
-  padding: 0.75rem;
+  padding: 0.85rem;
   display: flex;
   flex-direction: column;
   gap: 0.65rem;
+  overflow: hidden;
 }
 
-.mockup-chart {
-  background: rgba(0,0,0,0.2);
+/* Header do conteúdo */
+.mockup-content-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 0.25rem;
+}
+
+.mch-line {
+  height: 8px;
+  background: rgba(255,255,255,0.10);
+  border-radius: 4px;
+}
+.mch-line.wide   { width: 100%; }
+.mch-line.medium { width: 60%; }
+
+/* Área do gráfico */
+.mockup-chart-wrap {
+  background: rgba(255,255,255,0.04);
   border-radius: var(--radius-sm);
-  padding: 0.75rem;
+  padding: 0.65rem 0.75rem;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 
-.mockup-chart svg {
+.mockup-chart-header {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.mch-tag {
+  height: 6px;
+  background: rgba(255,255,255,0.10);
+  border-radius: 3px;
+  width: 40%;
+}
+.mch-tag.short { width: 25%; }
+
+.mockup-chart-svg {
   width: 100%;
-  height: 85px;
+  height: 80px;
   display: block;
 }
 
-.mockup-cards-grid {
+/* Cards inferiores — rect w=345.5 h=84.7 rx=8 — Figma */
+.mockup-cards-row {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 0.5rem;
 }
 
 .mockup-card {
-  background: rgba(0,0,0,0.2);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.08);
   border-radius: var(--radius-sm);
-  height: 56px;
+  padding: 0.6rem 0.65rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.mc-line {
+  height: 7px;
+  background: rgba(255,255,255,0.10);
+  border-radius: 3px;
+}
+.mc-line.wide   { width: 100%; }
+.mc-line.medium { width: 60%; }
+
+.mc-accent {
+  margin-top: auto;
+  height: 20px;
+  background: rgba(118,185,0,0.15);
+  border-radius: 3px;
+  width: 50%;
 }
 
 /* ===========================
@@ -235,9 +329,7 @@ body {
   margin-bottom: 2rem;
 }
 
-/* ===========================
-   SEÇÃO: TEXTO + VÍDEO
-=========================== */
+/* TEXTO + IMAGEM */
 .section-texto-imagem {
   background: var(--body-bg);
 }
@@ -269,25 +361,7 @@ body {
   flex: 1;
 }
 
-.video-wrapper {
-  position: relative;
-  padding-bottom: 56.25%;
-  height: 0;
-  overflow: hidden;
-  border-radius: var(--radius-md);
-  background: #000;
-}
-
-.video-wrapper iframe {
-  position: absolute;
-  top: 0; left: 0;
-  width: 100%; height: 100%;
-  border: none;
-}
-
-/* ===========================
-   SEÇÃO: DUAS IMAGENS
-=========================== */
+/* DUAS IMAGENS */
 .section-two-images {
   background: var(--body-bg);
   padding-top: 0;
@@ -316,9 +390,7 @@ body {
   margin-bottom: 0.75rem;
 }
 
-/* ===========================
-   BLOCKQUOTE
-=========================== */
+/* BLOCKQUOTE */
 .section-quote {
   background: var(--bg-dark);
   padding: 4rem 0;
@@ -336,9 +408,7 @@ body {
   padding: 0;
 }
 
-/* ===========================
-   FOOTER
-=========================== */
+/* FOOTER */
 .site-footer {
   background: var(--bg-dark);
   padding: 2.5rem 0;

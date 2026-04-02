@@ -23,45 +23,52 @@
   <!-- ===================== HERO ===================== -->
   <section class="hero" aria-label="Apresentação do curso">
 
-    <!-- SVG de fundo 100% fiel ao Figma -->
-    <svg class="hero-bg" viewBox="0 0 1280 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <!-- Fundo SVG: linhas curvas + blobs — coords exatas do Figma -->
+    <svg class="hero-bg" viewBox="0 0 1280 744" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
       <defs>
-        <filter id="blur-left" x="-50%" y="-50%" width="200%" height="200%">
+        <filter id="blur-blob-left" x="-60%" y="-60%" width="220%" height="220%">
           <feGaussianBlur stdDeviation="80"/>
         </filter>
-        <filter id="blur-right" x="-50%" y="-50%" width="200%" height="200%">
+        <filter id="blur-blob-right" x="-60%" y="-60%" width="220%" height="220%">
           <feGaussianBlur stdDeviation="100"/>
         </filter>
-        <linearGradient id="grad-right" x1="0" y1="0" x2="1" y2="1">
+        <linearGradient id="grad-blob-right" x1="0" y1="0" x2="1" y2="1">
           <stop offset="0%" stop-color="#76B900" stop-opacity="0.15"/>
           <stop offset="100%" stop-color="#76B900" stop-opacity="0"/>
         </linearGradient>
+        <clipPath id="hero-clip">
+          <rect width="1280" height="744"/>
+        </clipPath>
       </defs>
-      <!-- Blob esquerdo -->
-      <rect x="-150" y="72" width="600" height="600" rx="300" fill="#76B900" fill-opacity="0.10" filter="url(#blur-left)"/>
-      <!-- Blob direito -->
-      <rect x="680" y="-200" width="800" height="800" rx="400" fill="url(#grad-right)" filter="url(#blur-right)"/>
-      <!-- Linha curva 1 (principal) -->
-      <path d="M0 161C256 107 469 188 640 404C811 619 1024 700 1280 646" stroke="#76B900" stroke-width="2.09" fill="none"/>
-      <!-- Linha curva 2 (tênue) -->
-      <path d="M0 404C341 350 597 377 768 485C939 592 1109 512 1280 242" stroke="#76B900" stroke-width="1.04" fill="none"/>
-      <!-- Linha curva 3 (opacity 0.5) -->
-      <path d="M1280 81C1024 242 725 377 384 485C43 592 -85 673 0 727" stroke="#76B900" stroke-width="1.57" fill="none" opacity="0.5"/>
-      <!-- Círculos decorativos canto superior direito -->
-      <rect x="1088.5" y="121.66" width="127" height="127" rx="63.5" stroke="#76B900" stroke-opacity="0.2" fill="none"/>
-      <rect x="1152" y="96.77" width="125" height="125" rx="62.5" transform="rotate(45 1152 96.77)" stroke="#76B900" stroke-opacity="0.1" fill="none"/>
-      <rect x="1063.61" y="185.16" width="125" height="125" rx="62.5" transform="rotate(-45 1063.61 185.16)" stroke="#76B900" stroke-opacity="0.1" fill="none"/>
-      <!-- Círculo pequeno esquerdo inferior -->
-      <rect opacity="0.3" x="576.5" y="499" width="63" height="63" rx="31.5" stroke="white" stroke-opacity="0.1" fill="none"/>
+      <g clip-path="url(#hero-clip)">
+        <!-- Blob esquerdo -->
+        <rect x="-150" y="71.88" width="600" height="600" rx="300" fill="#76B900" fill-opacity="0.10" filter="url(#blur-blob-left)"/>
+        <!-- Blob direito -->
+        <rect x="680" y="-200" width="800" height="800" rx="400" fill="url(#grad-blob-right)" filter="url(#blur-blob-right)"/>
+        <!-- Linha curva 1 — stroke-width 2.09 -->
+        <path d="M0 161.55C256 107.7 469.333 188.475 640 403.875C810.667 619.275 1024 700.05 1280 646.2" stroke="#76B900" stroke-width="2.09" fill="none"/>
+        <!-- Linha curva 2 — stroke-width 1.04 -->
+        <path d="M0 403.875C341.333 350.025 597.333 376.95 768 484.65C938.667 592.35 1109.33 511.575 1280 242.325" stroke="#76B900" stroke-width="1.04" fill="none"/>
+        <!-- Linha curva 3 — stroke-width 1.57 opacity 0.5 -->
+        <path d="M1280 80.775C1024 242.325 725.333 376.95 384 484.65C42.6667 592.35 -85.3333 673.125 0 726.975" stroke="#76B900" stroke-width="1.57" fill="none" opacity="0.5"/>
+        <!-- Círculos decorativos canto superior direito -->
+        <rect x="1088.5" y="121.66" width="127" height="127" rx="63.5" stroke="#76B900" stroke-opacity="0.2" fill="none"/>
+        <rect x="1152" y="96.77" width="125" height="125" rx="62.5" transform="rotate(45 1152 96.77)" stroke="#76B900" stroke-opacity="0.1" fill="none"/>
+        <rect x="1063.61" y="185.16" width="125" height="125" rx="62.5" transform="rotate(-45 1063.61 185.16)" stroke="#76B900" stroke-opacity="0.1" fill="none"/>
+        <!-- Círculo branco pequeno -->
+        <rect opacity="0.3" x="576.5" y="599.48" width="63" height="63" rx="31.5" stroke="white" stroke-opacity="0.1" fill="none"/>
+      </g>
     </svg>
 
+    <!-- Barra verde esquerda (rect x=56 y=183 w=4 h=96 no Figma) -->
+    <div class="hero-accent-bar" aria-hidden="true"></div>
+
     <div class="container hero-container">
+      <!-- CONTEÚDO TEXTO -->
       <div class="hero-content">
-        <div class="hero-title-bar">
-          <h1 class="hero-title">
-            Lorem ipsum dolor,<br />sit <span class="hero-accent">amet</span>
-          </h1>
-        </div>
+        <h1 class="hero-title">
+          Lorem ipsum dolor,<br />sit <span class="hero-accent">amet</span>
+        </h1>
         <p class="hero-desc">
           It is a long established fact that a reader will be distracted by
           the readable content of a page when looking at its layout.
@@ -71,47 +78,100 @@
         </a>
       </div>
 
+      <!-- MOCKUP — HTML/CSS baseado nas coords do Figma -->
       <div class="hero-visual" aria-hidden="true">
-        <div class="hero-mockup">
+        <div class="mockup-window">
+
+          <!-- Topbar: dots + address bar -->
           <div class="mockup-topbar">
-            <span class="mdot red"></span>
-            <span class="mdot yellow"></span>
-            <span class="mdot green"></span>
-          </div>
-          <div class="mockup-body">
-            <div class="mockup-sidebar">
-              <div class="mline"></div>
-              <div class="mline short"></div>
-              <div class="mline short"></div>
-              <div class="mline-btn"></div>
+            <div class="mockup-dots">
+              <span class="mdot red"></span>
+              <span class="mdot yellow"></span>
+              <span class="mdot green"></span>
             </div>
+            <div class="mockup-addressbar"></div>
+          </div>
+
+          <!-- Body: sidebar + main -->
+          <div class="mockup-body">
+
+            <!-- Sidebar -->
+            <div class="mockup-sidebar">
+              <div class="msb-line"></div>
+              <div class="msb-line short"></div>
+              <div class="msb-line short"></div>
+              <div class="msb-line short"></div>
+              <div class="msb-line short"></div>
+              <div class="msb-spacer"></div>
+              <div class="msb-btn"></div>
+            </div>
+
+            <!-- Main -->
             <div class="mockup-main">
-              <div class="mockup-chart">
-                <svg viewBox="0 0 220 85" preserveAspectRatio="none" aria-hidden="true">
+
+              <!-- Cabeçalho do conteúdo -->
+              <div class="mockup-content-header">
+                <div class="mch-line wide"></div>
+                <div class="mch-line medium"></div>
+              </div>
+
+              <!-- Gráfico -->
+              <div class="mockup-chart-wrap">
+                <div class="mockup-chart-header">
+                  <div class="mch-tag"></div>
+                  <div class="mch-tag short"></div>
+                </div>
+                <svg class="mockup-chart-svg" viewBox="0 0 345 100" preserveAspectRatio="none" aria-hidden="true">
                   <defs>
-                    <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
                       <stop offset="0%" stop-color="#76B900" stop-opacity="0.25"/>
                       <stop offset="100%" stop-color="#76B900" stop-opacity="0"/>
                     </linearGradient>
                   </defs>
-                  <polygon points="0,80 30,65 55,68 80,45 105,50 135,28 165,32 195,15 220,10 220,85 0,85" fill="url(#chartFill)"/>
-                  <polyline points="0,80 30,65 55,68 80,45 105,50 135,28 165,32 195,15 220,10" fill="none" stroke="#76B900" stroke-width="2" stroke-linejoin="round"/>
+                  <!-- Área preenchida -->
+                  <polygon
+                    points="0,95 40,80 80,85 120,60 160,65 200,38 245,42 290,18 345,10 345,100 0,100"
+                    fill="url(#chartGrad)"
+                  />
+                  <!-- Linha do gráfico -->
+                  <polyline
+                    points="0,95 40,80 80,85 120,60 160,65 200,38 245,42 290,18 345,10"
+                    fill="none"
+                    stroke="#76B900"
+                    stroke-width="2.5"
+                    stroke-linejoin="round"
+                    stroke-linecap="round"
+                  />
+                  <!-- Pontos -->
+                  <circle cx="200" cy="38" r="4" fill="#76B900"/>
+                  <circle cx="290" cy="18" r="4" fill="#76B900"/>
                 </svg>
               </div>
-              <div class="mockup-cards-grid">
-                <div class="mockup-card"></div>
-                <div class="mockup-card"></div>
+
+              <!-- Dois cards inferiores -->
+              <div class="mockup-cards-row">
+                <div class="mockup-card">
+                  <div class="mc-line wide"></div>
+                  <div class="mc-line medium"></div>
+                  <div class="mc-accent"></div>
+                </div>
+                <div class="mockup-card">
+                  <div class="mc-line wide"></div>
+                  <div class="mc-line medium"></div>
+                  <div class="mc-accent"></div>
+                </div>
               </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+
+            </div><!-- /mockup-main -->
+          </div><!-- /mockup-body -->
+        </div><!-- /mockup-window -->
+      </div><!-- /hero-visual -->
+    </div><!-- /hero-container -->
   </section>
 
   <main>
 
-    <!-- ===================== SEÇÃO: TEXTO + VÍDEO ===================== -->
+    <!-- ===================== SEÇÃO: TEXTO + IMAGEM ===================== -->
     <section class="section section-texto-imagem" aria-labelledby="titulo-intro">
       <div class="container section-texto-imagem-inner">
         <div class="texto-imagem-content">
@@ -173,7 +233,6 @@
       <div class="container">
         <div class="swiper cards-swiper" role="region" aria-label="Cards do curso">
           <div class="swiper-wrapper">
-
             <div class="swiper-slide">
               <article class="card" aria-expanded="false">
                 <div class="card-header">
@@ -184,11 +243,10 @@
                   <button class="card-btn-abrir" aria-controls="card-body-1">Abrir</button>
                 </div>
                 <div class="card-body" id="card-body-1" aria-hidden="true">
-                  <p>Conteúdo detalhado do módulo 1. Aqui você vai aprender os fundamentos essenciais para avançar na trilha de aprendizado.</p>
+                  <p>Conteúdo detalhado do módulo 1.</p>
                 </div>
               </article>
             </div>
-
             <div class="swiper-slide">
               <article class="card" aria-expanded="false">
                 <div class="card-header">
@@ -199,11 +257,10 @@
                   <button class="card-btn-abrir" aria-controls="card-body-2">Abrir</button>
                 </div>
                 <div class="card-body" id="card-body-2" aria-hidden="true">
-                  <p>Conteúdo detalhado do módulo 2. Exercícios práticos e projetos guiados para consolidar o aprendizado.</p>
+                  <p>Conteúdo detalhado do módulo 2.</p>
                 </div>
               </article>
             </div>
-
             <div class="swiper-slide">
               <article class="card" aria-expanded="false">
                 <div class="card-header">
@@ -214,11 +271,10 @@
                   <button class="card-btn-abrir" aria-controls="card-body-3">Abrir</button>
                 </div>
                 <div class="card-body" id="card-body-3" aria-hidden="true">
-                  <p>Conteúdo detalhado do módulo 3. Tópicos avançados para quem deseja se destacar no mercado.</p>
+                  <p>Conteúdo detalhado do módulo 3.</p>
                 </div>
               </article>
             </div>
-
           </div>
           <div class="swiper-pagination"></div>
         </div>
@@ -242,7 +298,6 @@
     <!-- ===================== SEÇÃO: ATIVIDADES ===================== -->
     <section class="section section-atividades" id="atividades" aria-labelledby="titulo-atividades">
       <div class="container">
-
         <div class="atividade" id="atividade-discursiva">
           <h3 class="atividade-titulo">Atividade discursiva</h3>
           <p class="atividade-desc">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
@@ -253,42 +308,17 @@
           </div>
           <div class="feedback feedback-sucesso" id="feedback-discursiva" role="alert" aria-live="polite">
             <strong>É isso aí!</strong>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur commodi odio maiores accusamus aspernatur consequatur ipsam dignissimos magnam hic, velit est perferendis explicabo aperiam ratione veritatis labore.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
           </div>
         </div>
-
         <div class="atividade" id="atividade-objetiva">
           <h3 class="atividade-titulo">Atividade Objetiva</h3>
           <p class="atividade-desc">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
           <ul class="opcoes-lista" role="group" aria-label="Opções de resposta">
-            <li>
-              <label class="opcao-item">
-                <input type="checkbox" name="objetiva" value="A" />
-                <span class="opcao-letra">A)</span>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              </label>
-            </li>
-            <li>
-              <label class="opcao-item">
-                <input type="checkbox" name="objetiva" value="B" />
-                <span class="opcao-letra">B)</span>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              </label>
-            </li>
-            <li>
-              <label class="opcao-item">
-                <input type="checkbox" name="objetiva" value="C" />
-                <span class="opcao-letra">C)</span>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              </label>
-            </li>
-            <li>
-              <label class="opcao-item">
-                <input type="checkbox" name="objetiva" value="D" />
-                <span class="opcao-letra">D)</span>
-                Lorem Ipsum is simply dummy text of the printing and typesetting industry.
-              </label>
-            </li>
+            <li><label class="opcao-item"><input type="checkbox" name="objetiva" value="A" /><span class="opcao-letra">A)</span> Lorem Ipsum is simply dummy text.</label></li>
+            <li><label class="opcao-item"><input type="checkbox" name="objetiva" value="B" /><span class="opcao-letra">B)</span> Lorem Ipsum is simply dummy text.</label></li>
+            <li><label class="opcao-item"><input type="checkbox" name="objetiva" value="C" /><span class="opcao-letra">C)</span> Lorem Ipsum is simply dummy text.</label></li>
+            <li><label class="opcao-item"><input type="checkbox" name="objetiva" value="D" /><span class="opcao-letra">D)</span> Lorem Ipsum is simply dummy text.</label></li>
           </ul>
           <div class="atividade-acoes">
             <button class="btn-responder" id="btn-responder-objetiva" disabled>Responder</button>
@@ -296,10 +326,9 @@
           </div>
           <div class="feedback feedback-erro" id="feedback-objetiva" role="alert" aria-live="polite">
             <strong>Tente novamente!</strong>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Pariatur commodi odio maiores accusamus aspernatur consequatur ipsam dignissimos magnam hic, velit est perferendis explicabo aperiam ratione veritatis labore.</p>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.</p>
           </div>
         </div>
-
       </div>
     </section>
 
@@ -309,22 +338,10 @@
         <h2 class="section-title" id="titulo-faq">Perguntas frequentes</h2>
         <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         <div class="faq-lista">
-          <details class="faq-item">
-            <summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary>
-            <div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more or less normal distribution of letters.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary>
-            <div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary>
-            <div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div>
-          </details>
-          <details class="faq-item">
-            <summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary>
-            <div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div>
-          </details>
+          <details class="faq-item"><summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary><div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div></details>
+          <details class="faq-item"><summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary><div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div></details>
+          <details class="faq-item"><summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary><div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div></details>
+          <details class="faq-item"><summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary><div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div></details>
         </div>
       </div>
     </section>
