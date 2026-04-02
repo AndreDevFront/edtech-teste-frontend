@@ -379,20 +379,18 @@ body {
   margin: 0 auto;
 }
 
-/* Cada coluna ocupa metade do espaço */
+/* Item único: imagem à esquerda + texto à direita */
 .two-img-item {
-  flex: 1;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: flex-start;
-  gap: 16px;
-  min-width: 0;
+  flex-direction: row;
+  align-items: center;
+  gap: 32px;
+  width: 100%;
 }
 
-/* Imagem: cobre toda a largura da coluna, altura proporcional ao Figma */
+/* Imagem: largura fixa conforme Figma */
 .two-img-item img {
-  width: 100%;
+  width: 431px;
   height: 257px;
   object-fit: cover;
   border-radius: 8px;
@@ -400,12 +398,12 @@ body {
   flex-shrink: 0;
 }
 
-/* Textos — apenas no primeiro item */
+/* Textos — coluna à direita da imagem */
 .two-img-text {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  width: 100%;
+  flex: 1;
 }
 
 .two-img-text p {
