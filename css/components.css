@@ -159,9 +159,7 @@
 /* ===========================
    ÁUDIO
 =========================== */
-.section-audio {
-  background: var(--body-bg);
-}
+.section-audio {}
 
 .audio-player {
   box-sizing: border-box;
@@ -679,9 +677,7 @@ details.faq-item[open] .faq-icon {
 /* ===========================
    VÍDEO (YouTube player)
 =========================== */
-.section-video {
-  background: var(--body-bg);
-}
+.section-video {}
 
 .video-wrap {
   display: flex;
