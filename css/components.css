@@ -128,7 +128,7 @@
 }
 
 /* ===========================
-   ATIVIDADES
+   ATIVIDADES (geral)
 =========================== */
 .section-atividades {
   background: #f8f8f8;
@@ -251,48 +251,248 @@ button:disabled {
   border-left: 4px solid #f59e0b;
 }
 
-/* OBJETIVA */
-.opcoes-lista {
+/* ===========================
+   ATIVIDADE OBJETIVA
+=========================== */
+#atividade-objetiva {
+  box-sizing: border-box;
   display: flex;
   flex-direction: column;
-  gap: 0.65rem;
-  margin-bottom: 1rem;
+  align-items: flex-start;
+  padding: 32px;
+  gap: 32px;
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 12px;
+  width: 100%;
+  max-width: 960px;
 }
 
-.opcao-item {
+/* Cabeçalho: ícone + textos */
+#atividade-objetiva .atividade-header {
   display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+}
+
+#atividade-objetiva .atividade-icon-wrap {
+  display: flex;
+  justify-content: center;
   align-items: center;
-  gap: 0.75rem;
-  padding: 0.875rem 1rem;
-  border: 1.5px solid #e8e8e8;
-  border-radius: var(--radius-sm);
-  cursor: pointer;
-  transition: border-color 0.2s, background 0.2s;
-  font-size: 0.9rem;
-  color: var(--text);
-}
-
-.opcao-item:hover {
-  border-color: var(--accent);
-  background: rgba(74,222,0,0.04);
-}
-
-.opcao-item.selecionada {
-  border-color: var(--accent);
-  background: rgba(74,222,0,0.07);
-}
-
-.opcao-letra {
-  font-weight: 700;
-  color: var(--text-light);
-  min-width: 24px;
-}
-
-.opcao-item input[type="checkbox"] {
-  width: 17px;
-  height: 17px;
-  accent-color: var(--accent);
+  width: 40px;
+  height: 40px;
+  background: rgba(118, 185, 0, 0.1);
+  border-radius: 9999px;
   flex-shrink: 0;
+}
+
+#atividade-objetiva .atividade-icon-wrap svg,
+#atividade-objetiva .atividade-icon-wrap img {
+  width: 20px;
+  height: 20px;
+  color: #76B900;
+}
+
+#atividade-objetiva .atividade-textos {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  flex: 1;
+}
+
+#atividade-objetiva .atividade-titulo {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  color: #0F172A;
+  margin-bottom: 0;
+}
+
+#atividade-objetiva .atividade-desc {
+  font-family: 'Inter', sans-serif;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 18px;
+  line-height: 28px;
+  color: #5C6B48;
+  margin-bottom: 0;
+}
+
+/* Lista de opções */
+#atividade-objetiva .opcoes-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-self: stretch;
+  margin-bottom: 0;
+}
+
+/* Opção padrão (não selecionada) */
+#atividade-objetiva .opcao-item {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 16px;
+  gap: 0;
+  width: 100%;
+  background: #ffffff;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.2s, border-color 0.2s;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #334155;
+}
+
+#atividade-objetiva .opcao-item:hover {
+  border-color: #76B900;
+  background: rgba(118, 185, 0, 0.04);
+}
+
+/* Checkbox wrapper */
+#atividade-objetiva .opcao-item input[type="checkbox"] {
+  box-sizing: border-box;
+  width: 20px;
+  height: 20px;
+  min-width: 20px;
+  background: #ffffff;
+  border: 1px solid #D1D5DB;
+  border-radius: 4px;
+  margin-right: 16px;
+  accent-color: #0C0A08;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/* Opção selecionada */
+#atividade-objetiva .opcao-item.selecionada {
+  background: #0C0A08;
+  border-color: #0C0A08;
+  color: #ffffff;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+#atividade-objetiva .opcao-item.selecionada .opcao-letra {
+  color: #ffffff;
+}
+
+/* Letra da opção */
+#atividade-objetiva .opcao-letra {
+  font-weight: 500;
+  color: #334155;
+  margin-right: 0;
+  min-width: auto;
+}
+
+/* Botões de ação */
+#atividade-objetiva .atividade-acoes {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 16px;
+  align-self: stretch;
+  margin-top: 0;
+}
+
+/* Btn Responder (desabilitado por padrão) */
+#atividade-objetiva .btn-responder {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 24px;
+  background: #F3F4F6;
+  border-radius: 4px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #9CA3AF;
+  cursor: not-allowed;
+  transition: background 0.2s, color 0.2s;
+}
+
+#atividade-objetiva .btn-responder:not(:disabled) {
+  background: #0C0A08;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+#atividade-objetiva .btn-responder:not(:disabled):hover {
+  background: #333;
+}
+
+/* Btn Alterar */
+#atividade-objetiva .btn-alterar {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10px 24px;
+  background: #0C0A08;
+  border-radius: 4px;
+  border: none;
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+  cursor: pointer;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+#atividade-objetiva .btn-alterar:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+#atividade-objetiva .btn-alterar:not(:disabled):hover {
+  background: #333;
+}
+
+/* Feedback de erro */
+#atividade-objetiva .feedback-erro {
+  box-sizing: border-box;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 16px 24px 24px;
+  gap: 10px;
+  align-self: stretch;
+  background: #FFF9C4;
+  border-radius: 4px;
+  border-left: none;
+  margin-top: 0;
+}
+
+#atividade-objetiva .feedback-erro strong {
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 24px;
+  color: #713F12;
+  margin-bottom: 0;
+}
+
+#atividade-objetiva .feedback-erro p {
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 23px;
+  color: rgba(113, 63, 18, 0.9);
+  margin: 0;
 }
 
 /* ===========================
@@ -363,7 +563,7 @@ summary.faq-pergunta {
   gap: 1rem;
   color: var(--text);
   transition: color 0.2s;
-   background: #F5F5F5;
+  background: #F5F5F5;
 }
 
 summary.faq-pergunta::-webkit-details-marker {
