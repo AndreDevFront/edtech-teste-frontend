@@ -1,4 +1,4 @@
-// js/slider.js
+
 document.addEventListener('DOMContentLoaded', () => {
 
   const swiperEl = document.querySelector('.swiper');
