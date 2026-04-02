@@ -237,6 +237,7 @@ button:disabled {
 
 .feedback.visivel {
   display: block;
+   width: 100%;
 }
 
 .feedback strong {
@@ -470,7 +471,7 @@ button:disabled {
 #atividade-objetiva .feedback-erro {
   box-sizing: border-box;
   position: relative;
-  display: flex;
+  display: block;
   flex-direction: column;
   align-items: flex-start;
   padding: 16px 24px 24px;
