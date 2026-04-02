@@ -1,12 +1,14 @@
 /* ===========================
-   VARIÁVEIS GLOBAIS
+   VARIÁVEIS GLOBAIS — 100% Figma
 =========================== */
 :root {
-  --accent:        #4ADE00;
-  --accent-dim:    rgba(74, 222, 0, 0.12);
-  --bg-dark:       #0d110d;
-  --bg-dark2:      #141a14;
-  --bg-dark3:      #1a201a;
+  /* Cores exatas extraídas do SVG do Figma */
+  --accent:        #76B900;
+  --accent-dim:    rgba(118, 185, 0, 0.12);
+  --accent-glow:   rgba(118, 185, 0, 0.10);
+  --bg-dark:       #0C0A08;
+  --bg-dark2:      #161310;
+  --bg-dark3:      #1e1a16;
   --white:         #ffffff;
   --muted:         rgba(255,255,255,0.55);
   --body-bg:       #ffffff;
@@ -31,24 +33,24 @@ body {
 }
 
 /* ===========================
-   HERO
+   HERO — fiel ao SVG do Figma
 =========================== */
 .hero {
   position: relative;
-  background: var(--bg-dark);
+  background: #0C0A08;
   overflow: hidden;
-  min-height: 560px;
+  min-height: 600px;
   display: flex;
   align-items: center;
 }
 
-.hero-glow {
+/* SVG de fundo inline com as 3 linhas curvas + blobs exatos do Figma */
+.hero-bg {
   position: absolute;
   inset: 0;
+  width: 100%;
+  height: 100%;
   pointer-events: none;
-  background:
-    radial-gradient(ellipse 70% 70% at 65% 50%, rgba(74,222,0,0.07) 0%, transparent 70%),
-    radial-gradient(circle at 80% 10%, rgba(74,222,0,0.06) 0%, transparent 35%);
 }
 
 .hero-container {
@@ -97,7 +99,7 @@ body {
   align-items: center;
   gap: 0.5rem;
   background: var(--accent);
-  color: var(--bg-dark);
+  color: #0C0A08;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 0.95rem;
@@ -122,19 +124,20 @@ body {
 
 .hero-mockup {
   width: 100%;
-  max-width: 460px;
-  background: var(--bg-dark2);
+  max-width: 500px;
+  background: rgba(255,255,255,0.05);
   border-radius: var(--radius-lg);
-  border: 1px solid rgba(74,222,0,0.12);
-  box-shadow: 0 0 60px rgba(74,222,0,0.06);
+  border: 1px solid rgba(118,185,0,0.15);
+  box-shadow: 0 0 80px rgba(118,185,0,0.07);
   overflow: hidden;
+  backdrop-filter: blur(2px);
 }
 
 .mockup-topbar {
-  background: var(--bg-dark);
+  background: rgba(0,0,0,0.3);
   padding: 0.65rem 1rem;
   display: flex;
-  gap: 0.4rem;
+  gap: 0.45rem;
   align-items: center;
 }
 
@@ -143,23 +146,24 @@ body {
   height: 11px;
   border-radius: 50%;
 }
-.mdot.red    { background: #ff5f57; }
-.mdot.yellow { background: #febc2e; }
-.mdot.green  { background: #28c840; }
+/* Cores exatas do SVG do Figma */
+.mdot.red    { background: #EF4444; }
+.mdot.yellow { background: #EAB308; }
+.mdot.green  { background: #22C55E; }
 
 .mockup-body {
   display: flex;
-  min-height: 200px;
+  min-height: 220px;
 }
 
 .mockup-sidebar {
-  width: 88px;
-  background: var(--bg-dark3);
+  width: 90px;
+  background: rgba(0,0,0,0.25);
   padding: 1rem 0.75rem;
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  border-right: 1px solid rgba(74,222,0,0.06);
+  border-right: 1px solid rgba(118,185,0,0.08);
 }
 
 .mline {
@@ -175,7 +179,7 @@ body {
   height: 26px;
   background: var(--accent);
   border-radius: var(--radius-sm);
-  opacity: 0.8;
+  opacity: 0.2;
 }
 
 .mockup-main {
@@ -187,7 +191,7 @@ body {
 }
 
 .mockup-chart {
-  background: var(--bg-dark3);
+  background: rgba(0,0,0,0.2);
   border-radius: var(--radius-sm);
   padding: 0.75rem;
   flex: 1;
@@ -206,7 +210,7 @@ body {
 }
 
 .mockup-card {
-  background: var(--bg-dark3);
+  background: rgba(0,0,0,0.2);
   border-radius: var(--radius-sm);
   height: 56px;
 }

@@ -12,8 +12,6 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
-  <link rel="preconnect" href="https://images.unsplash.com" />
-  <link rel="preconnect" href="https://cdn.jsdelivr.net" />
   <link rel="stylesheet" href="css/reset.css" />
   <link rel="stylesheet" href="css/layout.css" />
   <link rel="stylesheet" href="css/components.css" />
@@ -24,7 +22,39 @@
 
   <!-- ===================== HERO ===================== -->
   <section class="hero" aria-label="Apresentação do curso">
-    <div class="hero-glow" aria-hidden="true"></div>
+
+    <!-- SVG de fundo 100% fiel ao Figma -->
+    <svg class="hero-bg" viewBox="0 0 1280 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <defs>
+        <filter id="blur-left" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="80"/>
+        </filter>
+        <filter id="blur-right" x="-50%" y="-50%" width="200%" height="200%">
+          <feGaussianBlur stdDeviation="100"/>
+        </filter>
+        <linearGradient id="grad-right" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#76B900" stop-opacity="0.15"/>
+          <stop offset="100%" stop-color="#76B900" stop-opacity="0"/>
+        </linearGradient>
+      </defs>
+      <!-- Blob esquerdo -->
+      <rect x="-150" y="72" width="600" height="600" rx="300" fill="#76B900" fill-opacity="0.10" filter="url(#blur-left)"/>
+      <!-- Blob direito -->
+      <rect x="680" y="-200" width="800" height="800" rx="400" fill="url(#grad-right)" filter="url(#blur-right)"/>
+      <!-- Linha curva 1 (principal) -->
+      <path d="M0 161C256 107 469 188 640 404C811 619 1024 700 1280 646" stroke="#76B900" stroke-width="2.09" fill="none"/>
+      <!-- Linha curva 2 (tênue) -->
+      <path d="M0 404C341 350 597 377 768 485C939 592 1109 512 1280 242" stroke="#76B900" stroke-width="1.04" fill="none"/>
+      <!-- Linha curva 3 (opacity 0.5) -->
+      <path d="M1280 81C1024 242 725 377 384 485C43 592 -85 673 0 727" stroke="#76B900" stroke-width="1.57" fill="none" opacity="0.5"/>
+      <!-- Círculos decorativos canto superior direito -->
+      <rect x="1088.5" y="121.66" width="127" height="127" rx="63.5" stroke="#76B900" stroke-opacity="0.2" fill="none"/>
+      <rect x="1152" y="96.77" width="125" height="125" rx="62.5" transform="rotate(45 1152 96.77)" stroke="#76B900" stroke-opacity="0.1" fill="none"/>
+      <rect x="1063.61" y="185.16" width="125" height="125" rx="62.5" transform="rotate(-45 1063.61 185.16)" stroke="#76B900" stroke-opacity="0.1" fill="none"/>
+      <!-- Círculo pequeno esquerdo inferior -->
+      <rect opacity="0.3" x="576.5" y="499" width="63" height="63" rx="31.5" stroke="white" stroke-opacity="0.1" fill="none"/>
+    </svg>
+
     <div class="container hero-container">
       <div class="hero-content">
         <div class="hero-title-bar">
@@ -40,6 +70,7 @@
           Lorem Ipsum <span aria-hidden="true">→</span>
         </a>
       </div>
+
       <div class="hero-visual" aria-hidden="true">
         <div class="hero-mockup">
           <div class="mockup-topbar">
@@ -56,15 +87,15 @@
             </div>
             <div class="mockup-main">
               <div class="mockup-chart">
-                <svg viewBox="0 0 220 90" preserveAspectRatio="none" aria-hidden="true">
+                <svg viewBox="0 0 220 85" preserveAspectRatio="none" aria-hidden="true">
                   <defs>
-                    <linearGradient id="chartGrad" x1="0" y1="0" x2="0" y2="1">
-                      <stop offset="0%" stop-color="#4ADE00" stop-opacity="0.25"/>
-                      <stop offset="100%" stop-color="#4ADE00" stop-opacity="0"/>
+                    <linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stop-color="#76B900" stop-opacity="0.25"/>
+                      <stop offset="100%" stop-color="#76B900" stop-opacity="0"/>
                     </linearGradient>
                   </defs>
-                  <polyline points="0,80 30,65 55,68 80,45 105,50 135,28 165,32 195,15 220,10" fill="none" stroke="#4ADE00" stroke-width="2.5" stroke-linejoin="round"/>
-                  <polygon points="0,80 30,65 55,68 80,45 105,50 135,28 165,32 195,15 220,10 220,90 0,90" fill="url(#chartGrad)"/>
+                  <polygon points="0,80 30,65 55,68 80,45 105,50 135,28 165,32 195,15 220,10 220,85 0,85" fill="url(#chartFill)"/>
+                  <polyline points="0,80 30,65 55,68 80,45 105,50 135,28 165,32 195,15 220,10" fill="none" stroke="#76B900" stroke-width="2" stroke-linejoin="round"/>
                 </svg>
               </div>
               <div class="mockup-cards-grid">
@@ -80,7 +111,7 @@
 
   <main>
 
-    <!-- ===================== SEÇÃO: TEXTO + IMAGEM ===================== -->
+    <!-- ===================== SEÇÃO: TEXTO + VÍDEO ===================== -->
     <section class="section section-texto-imagem" aria-labelledby="titulo-intro">
       <div class="container section-texto-imagem-inner">
         <div class="texto-imagem-content">
@@ -88,14 +119,14 @@
           <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
         </div>
         <div class="texto-imagem-media">
-          <div class="video-wrapper">
-            <iframe
-              src="https://www.youtube-nocookie.com/embed/Ejkb_YpuHWs"
-              title="Vídeo da aula — Introdução ao Desenvolvimento Web"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-            ></iframe>
-          </div>
+          <img
+            src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            alt="Monitor mostrando interface de website"
+            width="800"
+            height="500"
+            loading="lazy"
+            style="width:100%;border-radius:10px;display:block;"
+          />
         </div>
       </div>
     </section>
@@ -137,7 +168,7 @@
       </div>
     </section>
 
-    <!-- ===================== SEÇÃO: SLIDER / CARDS ===================== -->
+    <!-- ===================== SEÇÃO: CARDS SLIDER ===================== -->
     <section class="section section-cards" aria-labelledby="titulo-cards">
       <div class="container">
         <div class="swiper cards-swiper" role="region" aria-label="Cards do curso">
@@ -180,7 +211,7 @@
                   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Saepe excepturi, dolores perspiciatis commodi eum dolore nesciunt tempore similique at quas.</p>
                 </div>
                 <div class="card-footer">
-                  <button class="card-btn-abrir" aria-controls="card-body-3">Fechar</button>
+                  <button class="card-btn-abrir" aria-controls="card-body-3">Abrir</button>
                 </div>
                 <div class="card-body" id="card-body-3" aria-hidden="true">
                   <p>Conteúdo detalhado do módulo 3. Tópicos avançados para quem deseja se destacar no mercado.</p>
@@ -212,15 +243,10 @@
     <section class="section section-atividades" id="atividades" aria-labelledby="titulo-atividades">
       <div class="container">
 
-        <!-- Atividade Discursiva -->
         <div class="atividade" id="atividade-discursiva">
           <h3 class="atividade-titulo">Atividade discursiva</h3>
           <p class="atividade-desc">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-          <textarea
-            id="resposta-discursiva"
-            placeholder="Digite sua resposta aqui..."
-            aria-describedby="feedback-discursiva"
-          ></textarea>
+          <textarea id="resposta-discursiva" placeholder="Digite sua resposta aqui..." aria-describedby="feedback-discursiva"></textarea>
           <div class="atividade-acoes">
             <button class="btn-responder" id="btn-responder-discursiva">Responder</button>
             <button class="btn-alterar" id="btn-alterar-discursiva" disabled>Alterar</button>
@@ -231,7 +257,6 @@
           </div>
         </div>
 
-        <!-- Atividade Objetiva -->
         <div class="atividade" id="atividade-objetiva">
           <h3 class="atividade-titulo">Atividade Objetiva</h3>
           <p class="atividade-desc">It is a long established fact that a reader will be distracted by the readable content of a page.</p>
@@ -284,35 +309,22 @@
         <h2 class="section-title" id="titulo-faq">Perguntas frequentes</h2>
         <p class="section-subtitle">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</p>
         <div class="faq-lista">
-
           <details class="faq-item">
             <summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary>
-            <div class="faq-resposta">
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more or less normal distribution of letters, as opposed to using Content here.</p>
-            </div>
+            <div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more or less normal distribution of letters.</p></div>
           </details>
-
           <details class="faq-item">
             <summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary>
-            <div class="faq-resposta">
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-            </div>
+            <div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div>
           </details>
-
           <details class="faq-item">
             <summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary>
-            <div class="faq-resposta">
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-            </div>
+            <div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div>
           </details>
-
           <details class="faq-item">
             <summary class="faq-pergunta">Lorem Ipsum is simply dummy text of the printing and typesetting industry.</summary>
-            <div class="faq-resposta">
-              <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
-            </div>
+            <div class="faq-resposta"><p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p></div>
           </details>
-
         </div>
       </div>
     </section>
