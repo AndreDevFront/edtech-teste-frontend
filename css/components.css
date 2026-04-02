@@ -17,6 +17,7 @@
   /* alinha verticalmente os slides para o central sobressair */
   display: flex;
   align-items: stretch;
+   max-width: 960px;
 }
 
 /* ---- Card base (fechado / lateral) ---- */
