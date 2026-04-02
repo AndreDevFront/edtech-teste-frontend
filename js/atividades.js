@@ -1,4 +1,4 @@
-// js/atividades.js
+
 document.addEventListener('DOMContentLoaded', () => {
 
   // ================================================
