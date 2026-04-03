@@ -684,6 +684,7 @@ details.faq-item[open] .faq-icon {
   gap: 40px;
   max-width: 960px;
   margin: 0 auto;
+   padding:0;
 }
 
 .video-header {
