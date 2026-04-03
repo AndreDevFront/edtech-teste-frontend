@@ -81,6 +81,9 @@ body {
   flex-direction: column;
   gap: 1.75rem;
 }
+@media (max-width: 763px) {
+   .hero-content { padding-top: 30px; }
+}
 
 .hero-title {
   font-size: clamp(2rem, 4vw, 3.4rem);
