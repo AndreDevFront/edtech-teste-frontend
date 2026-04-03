@@ -734,9 +734,7 @@ details.faq-item[open] .faq-icon {
 /* ===========================
    SLIDER DE IMAGENS
 =========================== */
-.section-slider {
-  background: var(--body-bg);
-}
+.section-slider {}
 
 /* Card container: borda, sombra, border-radius */
 .img-slider {
