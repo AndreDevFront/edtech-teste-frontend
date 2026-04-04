@@ -8,11 +8,12 @@
 .cards-swiper {
   padding-bottom: 2.5rem !important;
   padding-top: 8px;
-  overflow: visible !important;   
+  overflow: hidden; 
 }
 @media (min-width: 1024px) {
    .cards-swiper {
-      max-width: 960px;      
+      max-width: 960px; 
+      overflow: visible;
    }
 }
 
